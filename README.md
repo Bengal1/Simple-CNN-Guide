@@ -24,8 +24,12 @@ Our Network is consist of 6 layers:
 
 ![simpleCNN](https://user-images.githubusercontent.com/34989887/204676252-09675c21-71c9-42fb-8d7e-ee22d1d6a692.png)
 
-The Simple CNN also use methods to accelerate and stablize the convergence of the network training, and avoid overfitting. After the second layer (Max-pool) and *** the Simple CNN applies [*Dropout*](https://en.wikipedia.org/wiki/Dilution_(neural_networks)), and after the *** layer (also Max-pool) it applies [*Batch-Normalization*](https://en.wikipedia.org/wiki/Batch_normalization).
+The Simple CNN also use methods to accelerate and stablize the convergence of the network training, and avoid overfitting. After the second layer (Max-pool) and *** the Simple CNN applies [*Dropout*](https://en.wikipedia.org/wiki/Dilution_(neural_networks)), and after the *** layer (Convolution) it applies [*Batch-Normalization*](https://en.wikipedia.org/wiki/Batch_normalization).
 
 guide with reference to knowledge
+
+Adam optimizer
+
+Cross Enthropy Loss function
 
 ## Typical Run
