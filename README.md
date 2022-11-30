@@ -6,7 +6,7 @@ In this guide I will explain the steps to write code for basic CNN, with link to
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods.
 This network is trained on MNIST dataset, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
 
-![image](https://user-images.githubusercontent.com/34989887/204675469-c88b361d-e983-44b9-b293-dc553e95772d.png)
+![MNIST Sample](https://user-images.githubusercontent.com/34989887/204675687-03f39aeb-1039-4abc-aec5-7f1d6cbbe52e.png)
 
 For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database)
 
