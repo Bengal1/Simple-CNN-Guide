@@ -5,7 +5,7 @@ In this guide I will explain the steps to write code for basic CNN, with link to
 This Repository is built for *** purposes to help...
 
 ## The Network & The Database
-The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. for reference I call the network "Simple CNN".
+The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference I call the network "Simple CNN".
 #### MNIST Database
 This network is trained on MNIST dataset, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
 
