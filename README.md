@@ -22,9 +22,7 @@ Our Network is consist of 6 layers:
 
 ![simpleCNN](https://user-images.githubusercontent.com/34989887/204676252-09675c21-71c9-42fb-8d7e-ee22d1d6a692.png)
 
-Dropout
-
-Batch-Normalization
+The Simple CNN also use methods to accelerate ... *Dropout* & *Batch-Normalization*
 
 guide with reference to knowledge
 
