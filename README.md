@@ -49,6 +49,8 @@ There are multiple kinds of layers, methods and function that can be used from t
 
 ## Typical Run
 
+![typical run](https://user-images.githubusercontent.com/34989887/204856007-94cd86df-e96f-4356-996c-732e2f7ba624.png)
+
 ## References
 [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/abs/1502.03167)
 
