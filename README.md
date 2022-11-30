@@ -45,7 +45,7 @@ There are multiple kinds of layers, methods and function that can be used from t
 #### Loss & Optimization
 [Cross Enthropy Loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) - 
 
-[Adam optimizer](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) - The Adam optimization algorithm is an extension to stochastic gradient descent
+[Adam optimizer](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) - The Adam optimization algorithm is an extension to stochastic gradient descent (SGD). Unlike SGD, The method computes individual adaptive learning rates for different parameters from estimates of first and second moments of the gradients. For more information on [Stochastic gradient descent, extensions and variants](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
 
 ## Typical Run
 
