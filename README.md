@@ -13,12 +13,12 @@ For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_data
 
 #### Simple CNN
 Our Network is consist of 6 layers:
-1. Convolution Layer with a kernel size of 5x5, and ReLU activation function.
+1. Convolution Layer with a kernel size of 5x5, and [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) activation function.
 2. Max-pool Layer with a kernel size of 2x2.
 3. Convolution Layer with a kernel size of 5x5and ReLU activation function..
 4. Max-pool Layer with a kernel size of 2x2.
 5. Fully-connected Layer with input layer of 1024 and output layer of 512 and ReLU activation function.
-6. Fully-connected Layer with input layer of 512 and output layer of 10 (classes) and Softmax activation function.
+6. Fully-connected Layer with input layer of 512 and output layer of 10 (classes) and [Softmax](https://en.wikipedia.org/wiki/Softmax_function) activation function.
 
 ![simpleCNN](https://user-images.githubusercontent.com/34989887/204676252-09675c21-71c9-42fb-8d7e-ee22d1d6a692.png)
 
