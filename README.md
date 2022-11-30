@@ -7,7 +7,7 @@ This Repository is built for *** purposes to help...
 ## The Network & The Database
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
 #### MNIST Database
-This network is trained on MNIST dataset, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
+This network is trained on MNIST database, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
 
 <img src="https://user-images.githubusercontent.com/34989887/204675687-03f39aeb-1039-4abc-aec5-7f1d6cbbe52e.png" width="350" height="350"/>
 
@@ -25,7 +25,8 @@ Our Network is consist of 6 layers:
 
 ![simpleCNN](https://user-images.githubusercontent.com/34989887/204676252-09675c21-71c9-42fb-8d7e-ee22d1d6a692.png)
 
-The Simple CNN also use methods to accelerate and stablize the convergence of the network training, and avoid overfitting. After the second layer (Max-pool) and *** the Simple CNN applies [*Dropout*](https://en.wikipedia.org/wiki/Dilution_(neural_networks)), and after the *** layer (Convolution) it applies [*Batch-Normalization*](https://en.wikipedia.org/wiki/Batch_normalization).
+The Simple CNN also use methods to accelerate and stablize the convergence of the network training, and avoid overfitting. 
+After the second layer (Max-pool) and *** the Simple CNN applies [*Dropout*](https://en.wikipedia.org/wiki/Dilution_(neural_networks)), and after the *** layer (Convolution) it applies [*Batch-Normalization*](https://en.wikipedia.org/wiki/Batch_normalization).
 
 guide with reference to knowledge
 
