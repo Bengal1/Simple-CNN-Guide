@@ -29,7 +29,7 @@ The Simple CNN also use methods to accelerate and stablize the convergence of th
 After the second layer (Max-pool) and *** the Simple CNN applies [*Dropout*](https://en.wikipedia.org/wiki/Dilution_(neural_networks)), and after the *** layer (Convolution) it applies [*Batch-Normalization*](https://en.wikipedia.org/wiki/Batch_normalization).
 
 ##### The Model
-The Simple CNN is implemented with [pytorch](https://pytorch.org/). In order to implement the network layers and methods pytorch module [*torch.nn*](https://pytorch.org/docs/stable/nn.html) is being used. Every Layer/method apart of the fully connected gets an input of 4-dimentions **(N,C,H,W)**, were N is the batch size, C is the number of the channels and H,W are height and width respectively, the resolution of the images.
+The Simple CNN is implemented with [pytorch](https://pytorch.org/). In order to implement the network layers and methods pytorch module [*torch.nn*](https://pytorch.org/docs/stable/nn.html) is being used. Every Layer/method apart of the fully connected gets an input of 4-dimentions ***(N,C,H,W)***, were N is the batch size, C is the number of the channels and H,W are height and width respectively, the resolution of the images.
 There are multiple kinds of layers, methods and function that can be used from this module, and for the *Simple CNN* network we used:
 
 [Conv2d](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html) - 
@@ -49,7 +49,7 @@ Cross Enthropy Loss function
 
 ## Typical Run
 
-References
+## References
 [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/abs/1502.03167)
 
 
