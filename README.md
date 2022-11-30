@@ -11,6 +11,7 @@ This network is trained on MNIST dataset, a simple gray-scale images of a writen
 
 <img src="https://user-images.githubusercontent.com/34989887/204675687-03f39aeb-1039-4abc-aec5-7f1d6cbbe52e.png" width="350" height="350"/>
 
+The MNIST database has *** images, such that the training dataset is *** images and the test dataset is *** images.
 For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database)
 
 #### Simple CNN
