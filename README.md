@@ -11,7 +11,7 @@ This network is trained on MNIST database, a simple gray-scale images of a write
 
 <img src="https://user-images.githubusercontent.com/34989887/204675687-03f39aeb-1039-4abc-aec5-7f1d6cbbe52e.png" width="350" height="350"/>
 
-The MNIST database has 70,000 images, such that the training dataset is 60,000 images and the test dataset is 10,00 images.
+The MNIST database has 70,000 images, such that the training dataset is 60,000 images and the test dataset is 10,000 images.
 For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database)
 
 #### Simple CNN
