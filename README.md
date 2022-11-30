@@ -7,8 +7,7 @@ The network in this guide is a 6 layers network contains: 2 convolution layers, 
 #### MNIST Database
 This network is trained on MNIST dataset, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
 
-![MNIST Sample](https://user-images.githubusercontent.com/34989887/204675687-03f39aeb-1039-4abc-aec5-7f1d6cbbe52e.png  width="100" height="100")
-
+![MNIST Sample](<img src="https://user-images.githubusercontent.com/34989887/204675687-03f39aeb-1039-4abc-aec5-7f1d6cbbe52e.png" width="150" height="280">)
 For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database)
 
 #### Simple CNN
