@@ -36,7 +36,7 @@ There are multiple kinds of layers, methods and function that can be used from t
 
 [MaxPool2d](https://pytorch.org/docs/stable/generated/torch.nn.MaxPool2d.html) - 
 
-[Linear](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) - Applies a linear transformation to the layer's input. y=xA^{T}+b
+[Linear](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) - Applies a linear transformation to the layer's input. y=xA<sub>T<sub/>+b
 
 [Dropout](https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html) - During training, randomly zeroes some of the elements of the input tensor with a given probability *p* using samples from a Bernoulli distribution. Each channel will be zeroed out independently on every forward call.
 
