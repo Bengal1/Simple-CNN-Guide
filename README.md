@@ -36,7 +36,7 @@ import torch.optim as optim
 import torch.utils.data
 from torch.utils.data import DataLoader
 from torchvision import datasets
-from torchvision.transforms import ToTensor ```
+from torchvision.transforms import ToTensor```
 
 guide with reference to knowledge
 
