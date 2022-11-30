@@ -42,14 +42,17 @@ There are multiple kinds of layers, methods and function that can be used from t
 
 [BatchNorm2d](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, sclicing through *N* and computing statistics on *(N,H,W)* slices.
 
+#### Loss & Optimization
+[Cross Enthropy Loss](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) - 
 
-Adam optimizer
-
-Cross Enthropy Loss function
+[Adam optimizer](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) - The Adam optimization algorithm is an extension to stochastic gradient descent
 
 ## Typical Run
 
 ## References
 [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/abs/1502.03167)
+
 [Improving neural networks by preventing co-adaptation of feature detectors](https://arxiv.org/abs/1207.0580)
+
+[Adam: A Method for Stochastic Optimization](https://arxiv.org/abs/1412.6980)
 
