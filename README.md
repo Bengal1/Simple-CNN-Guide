@@ -32,10 +32,14 @@ After the second layer (Max-pool) and *** the Simple CNN applies [*Dropout*](htt
 The Simple CNN is implemented with [pytorch](https://pytorch.org/). In order to implement the network layers and methods pytorch module [*torch.nn*](https://pytorch.org/docs/stable/nn.html) is being used. There are multiple kinds of layers, methods and function that can be used from this module, and for the *Simple CNN* network we used:
 
 [Conv2d](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html) - 
+
 [MaxPool2d](https://pytorch.org/docs/stable/generated/torch.nn.MaxPool2d.html) - 
+
 [Linear](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) - 
+
 [Dropout](https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html) - 
-[BatchNorm2d](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - 
+
+[BatchNorm2d](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, meanind for a input of size [batch_size, number_of_channels, height, width].
 
 
 Adam optimizer
