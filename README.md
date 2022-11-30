@@ -27,4 +27,4 @@ Batch-Normalization
 
 guide with reference to knowledge
 
-typical run
+### Typical Run
