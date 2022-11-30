@@ -28,6 +28,16 @@ Our Network is consist of 6 layers:
 The Simple CNN also use methods to accelerate and stablize the convergence of the network training, and avoid overfitting. 
 After the second layer (Max-pool) and *** the Simple CNN applies [*Dropout*](https://en.wikipedia.org/wiki/Dilution_(neural_networks)), and after the *** layer (Convolution) it applies [*Batch-Normalization*](https://en.wikipedia.org/wiki/Batch_normalization).
 
+## Code walk-through
+
+```import torch.nn as nn
+import torch.nn.functional as F
+import torch.optim as optim
+import torch.utils.data
+from torch.utils.data import DataLoader
+from torchvision import datasets
+from torchvision.transforms import ToTensor ```
+
 guide with reference to knowledge
 
 Adam optimizer
