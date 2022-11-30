@@ -30,13 +30,15 @@ After the second layer (Max-pool) and *** the Simple CNN applies [*Dropout*](htt
 
 ## Code walk-through
 
-``import torch.nn as nn
+```
+import torch.nn as nn
 import torch.nn.functional as F
 import torch.optim as optim
 import torch.utils.data
 from torch.utils.data import DataLoader
 from torchvision import datasets
-from torchvision.transforms import ToTensor``
+from torchvision.transforms import ToTensor
+```
 
 guide with reference to knowledge
 
