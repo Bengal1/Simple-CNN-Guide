@@ -52,6 +52,8 @@ There are multiple kinds of layers, methods and function that can be used from t
 ![typical run](https://user-images.githubusercontent.com/34989887/204856007-94cd86df-e96f-4356-996c-732e2f7ba624.png)
 
 ## References
+[The Back Propagation Method for CNN](https://ieeexplore.ieee.org/abstract/document/409626)
+
 [Batch Normalization: Accelerating Deep Network Training by Reducing Internal Covariate Shift](https://arxiv.org/abs/1502.03167)
 
 [Improving neural networks by preventing co-adaptation of feature detectors](https://arxiv.org/abs/1207.0580)
