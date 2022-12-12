@@ -6,7 +6,7 @@ This Repository is built for learning purposes, and its goal is to help people w
 
 ## The Network & The Database
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
-#### MNIST Database
+#### *MNIST Database*
 This network is trained on MNIST database, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
 
 <img src="https://user-images.githubusercontent.com/34989887/204675687-03f39aeb-1039-4abc-aec5-7f1d6cbbe52e.png" width="350" height="350"/>
@@ -14,7 +14,7 @@ This network is trained on MNIST database, a simple gray-scale images of a write
 The MNIST database has 70,000 images, such that the training dataset is 60,000 images and the test dataset is 10,000 images.
 For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database)
 
-#### Simple CNN
+#### *Simple CNN*
 Our Network is consist of 6 layers:
 1. Convolution Layer with a kernel size of 5x5, and [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) activation function.
 2. Max-pool Layer with a kernel size of 2x2.
