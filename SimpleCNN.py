@@ -67,6 +67,7 @@ class SimpleCNN(nn.Module):
 
 
 net = SimpleCNN()
+net.to(device)
 
 # Loss & Optimization #
 criterion = nn.CrossEntropyLoss()
@@ -80,6 +81,7 @@ for epoch in range(num_epochs):
     net.train()  # training mode
     print('epoch #{}' .format(epoch+1))
     for i, (inputs, labels) in enumerate(train_loader):
+        inputs.to(device), labels.to(device)
 
         # set gradient's parameter to zero
         optimizer.zero_grad()
@@ -104,9 +106,11 @@ correct_test = 0
 total_test = 0
 
 for i, (inputs, labels) in enumerate(test_loader):
+    inputs.to(device), labels.to(device)
 
     outputs = net(inputs)
     loss = criterion(outputs, labels)
+    
     # test accuracy calculation
     _, predicted = torch.max(outputs.data, 1)
     correct_test += (predicted == labels).sum().item()
