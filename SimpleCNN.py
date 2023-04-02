@@ -12,22 +12,6 @@ num_epochs = 20
 batch_size = 256
 num_class = 10
 
-# Set device
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print('Using', device, '\n')
-
-# Data #
-"""
-MNIST datasets from torchvision.datasets
-"""
-train_dataset = datasets.MNIST(root='./data', train=True,
-                               download=True, transform=ToTensor())
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-
-test_dataset = datasets.MNIST(root='./data', train=False,
-                              download=True, transform=ToTensor())
-test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-
 
 class SimpleCNN(nn.Module):
     """
@@ -66,8 +50,24 @@ class SimpleCNN(nn.Module):
         return x
 
 
+# Set device
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print('Using', device, '\n')
+
 net = SimpleCNN()
 net.to(device)
+
+# Data #
+"""
+MNIST datasets from torchvision.datasets
+"""
+train_dataset = datasets.MNIST(root='./data', train=True,
+                               download=True, transform=ToTensor())
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+
+test_dataset = datasets.MNIST(root='./data', train=False,
+                              download=True, transform=ToTensor())
+test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
 
 # Loss & Optimization #
 criterion = nn.CrossEntropyLoss()
