@@ -5,8 +5,10 @@ In this guide I will explain the steps to write code for basic CNN, with link to
 This Repository is built for learning purposes, and its goal is to help people who would like to start coding neural networks.
 
 ## Convolutional Neural Network
-
 ### Layers
+#### Fully-Connected Layer
+#### Convolutional Layer
+#### Pooling Layer
 ### Loss
 ### Optimization
 
