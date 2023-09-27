@@ -4,6 +4,12 @@ In this guide I will explain the steps to write code for basic CNN, with link to
 
 This Repository is built for learning purposes, and its goal is to help people who would like to start coding neural networks.
 
+## Convolutional Neural Network
+
+### Layers
+### Loss
+### Optimization
+
 ## The Network & The Database
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
 #### *MNIST Database*
