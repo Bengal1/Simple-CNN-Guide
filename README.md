@@ -5,6 +5,7 @@ In this guide I will explain the steps to write code for basic CNN, with link to
 This Repository is built for learning purposes, and its goal is to help people who would like to start coding neural networks.
 
 ## Convolutional Neural Network
+In this section we will briefly go through CNN properties and components.
 ### Layers
 #### Fully-Connected Layer
 #### Convolutional Layer
