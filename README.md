@@ -12,7 +12,8 @@ In *Convolutional Neural Network* there are several types of layers, we will dis
 
 #### Convolutional Layer
 #### Pooling Layer
-![pool1](https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/03a63574-996a-4eff-ae79-9cc5d10e27c3)
+![pool2](https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/dffa9f86-3dda-411d-8818-6e0448d9d14d)
+
 
 ### Loss
 ### Optimization
