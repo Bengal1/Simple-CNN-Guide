@@ -4,10 +4,12 @@ In this guide I will explain the steps to write code for basic CNN, with link to
 
 This Repository is built for learning purposes, and its goal is to help people who would like to start coding neural networks.
 ## Convolutional Neural Network
-In this section we will briefly go through CNN properties and components. CNN is type of Feed-Forward Network which learns to perform tasks like classification, the CNN does it through feature optimization. 
+In this section we will briefly go through CNN properties and components. *CNN* is type of Feed-Forward Network which learns to perform tasks like classification, the CNN does it through feature optimization. 
 
 ### Layers
+In *Convolutional Neural Network* there are several types of layers, we will discuss the types that are relevant to our SimpleCNN model.
 #### Fully-Connected Layer
+
 #### Convolutional Layer
 #### Pooling Layer
 ### Loss
