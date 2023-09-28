@@ -2,7 +2,7 @@
 This is a practical guide for building [*Convolutional Neural Network (CNN)*](https://en.wikipedia.org/wiki/Convolutional_neural_network), and it applies to beginners who like to know how to start building a CNN with *Pytorch*.
 In this guide I will explain the steps to write code for basic CNN, with link to relevant to topics. The reader sould have basic knowledge of [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) for him to use it. 
 
-This Repository is built for learning purposes, and its goal is to help people who would like to start coding neural networks.
+This Repository is built for learning purposes, and its goal is to help people who would like to start coding neural networks. CNN is type of Feed-Forward Network which learns to perform tasks like classification, the CNN does it through feature optimization. 
 
 ## Convolutional Neural Network
 In this section we will briefly go through CNN properties and components.
