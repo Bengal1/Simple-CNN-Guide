@@ -16,7 +16,7 @@ The Fully Connected (FC) layer consists of the weights and biases. Every member 
 
 In this manner, every member of the output layer is affected by every member of the input layer according to the corresponding weight.  
 ```math
-y_{jk} = \left(f( \sum_{i=1}^n w_{jk} x_i + w_{j0} \right)) 
+y_{jk} = f( \sum_{i=1}^n w_{jk} x_i + w_{j0}) 
 ```
 #### Convolutional Layer
 
