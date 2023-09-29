@@ -35,9 +35,13 @@ In order to make the Neural Network perform better we use non-linear activation 
 
 Common examples of activation functions:
 * Sigmoid - $\ \sigma(x) = 1/{1+e^{-x}} $
+
 * tanh
+
 * Rectified Linear Unit (ReLU)
+
 * Leaky rectified linear unit (Leaky ReLU)
+
 * Softmax
 
 
