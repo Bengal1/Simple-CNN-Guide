@@ -12,7 +12,9 @@ In *Convolutional Neural Network* there are several types of layers, we will dis
 
 <img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/40287168-6e2c-4f0a-aa39-b00da7885c9e" align="center" height="350"/>
 
+
 #### Convolutional Layer
+
 #### Pooling Layer
 
 ![pool2](https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/09d84d77-84aa-4585-baff-fc0663bc04ae)
