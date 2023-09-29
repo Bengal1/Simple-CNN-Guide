@@ -25,9 +25,11 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 
 #### Convolutional Layer
 
+
 #### Pooling Layer
 
 ![pool2](https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/09d84d77-84aa-4585-baff-fc0663bc04ae)
+
 
 ### Activation Function
 The Neural Network is a tool that perform estimation, when the activation function is non-linear, then a two-layer neural network can be proven to be a universal function approximator ([Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem)).
