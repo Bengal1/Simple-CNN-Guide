@@ -19,7 +19,7 @@ On top of the linear operation, an activation function will be applied, a non-li
 The formula below shows how to calculate the j-th output:
 
 ```math 
-y_{j} = h \bigg( \sum_{i=1}^n w_{ji} x_i + w_{0} \bigg) 
+y_{j} = h \bigg( \sum_{i=1}^n w_{ji} x_i + w_{j0} \bigg) 
 ```
 A network consisting solely of *Fully-Connected Layers* is called [*Multilayer perceptron*](https://en.wikipedia.org/wiki/Multilayer_perceptron).
 
@@ -42,7 +42,7 @@ Common examples of activation functions:
 
 * Leaky rectified linear unit (Leaky ReLU) - $\ LReLU(x) = $
 
-* Softmax - $$\ Softmax(x)_i = {{e^{x_i}} / {\sum_{j=1} e^{x_j}}} $$
+* Softmax - $$\ Softmax(x)_i = {{e^{x_i}} \over\sum_{j=1} e^{x_j}} $$
 
 
 ### Loss
