@@ -25,6 +25,7 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 
 #### Convolutional Layer
 
+The convolutional layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is portion of the layer's input. 
 
 
 #### Pooling Layer
