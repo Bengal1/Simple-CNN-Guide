@@ -10,7 +10,7 @@ In this section we will briefly go through CNN properties and components. *CNN* 
 In *Convolutional Neural Network* there are several types of layers, we will discuss the types that are relevant to our SimpleCNN model.
 #### Fully-Connected Layer
 
-<img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/40287168-6e2c-4f0a-aa39-b00da7885c9e"  height="350"/>
+<img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/40287168-6e2c-4f0a-aa39-b00da7885c9e" align="right" height="350"/>
 
 #### Convolutional Layer
 #### Pooling Layer
