@@ -45,7 +45,7 @@ Common examples of activation functions:
 * Softmax -  Softmax(x)_i = $$ \frac{e^{x_i}}{\sum_{j=1}^{J} e^{x_j}} $$ 
 
 $$
-\begin{pmatrix}0.01x & if & x \le 0 \\\ x & if & x > 0\end{pmatrix}
+\begin{matrix}0.01x & if & x \le 0 \\\ x & if & x > 0\end{matrix}
 $$
 
 ### Loss
