@@ -49,7 +49,7 @@ $$
 * Softmax - $\ Softmax(x)_{i} =  $
 
 $$
-\frac{e^{x_i}}{\sum_{j=1}^{J} e^{x_j}}
+\frac{e^{x_i}}{\sum_{j=1} e^{x_j}}
 $$ 
 
 
