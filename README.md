@@ -41,9 +41,9 @@ Common examples of activation functions:
 * Rectified Linear Unit (ReLU) - $\ ReLU(x) = max(0,x) $
 
 * Leaky rectified linear unit (Leaky ReLU) - LReLU(x) = 
-  $$
-  \lbrace{ \begin{matrix}0.01x & if & x \le 0 \\\ x & if & x > 0\end{matrix} }
-  $$
+$$
+\begin{matrix}0.01x & if & x \le 0 \\\ x & if & x > 0\end{matrix}
+$$
 
 * Softmax -  Softmax(x)_i = $$ \frac{e^{x_i}}{\sum_{j=1}^{J} e^{x_j}} $$ 
 
