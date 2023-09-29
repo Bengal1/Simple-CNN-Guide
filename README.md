@@ -23,7 +23,7 @@ y_{j} = h \bigg( \sum_{i=1}^n w_{ji} x_i + w_{j0} \bigg)
 ```
 A network consisting solely of *Fully-Connected Layers* is called [*Multilayer perceptron*](https://en.wikipedia.org/wiki/Multilayer_perceptron).
 
-#### Convolutional Layer
+#### **Convolutional Layer**
 
 
 #### Pooling Layer
