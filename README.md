@@ -34,9 +34,9 @@ The Neural Network is a tool that perform estimation, when the activation functi
 In order to make the Neural Network perform better we use non-linear activation function on top of the Fully-connected layers and the Convolutional layers (Convolution is a linear operator).
 
 Common examples of activation functions:
-* Sigmoid - $ \sigma(x) = 1/{1+e^{-x}} $
+* Sigmoid - $\ \sigma(x) = 1/{1+e^{-x}} $
 
-* tanh - $ tanh(x) = {e^x - e^{-x}}/{e^x + e^{-x}} $
+* tanh - $\ tanh(x) = {e^x - e^{-x}}/{e^x + e^{-x}} $
 
 * Rectified Linear Unit (ReLU)
 
