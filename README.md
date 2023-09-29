@@ -26,6 +26,7 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 #### Convolutional Layer
 
 
+
 #### Pooling Layer
 Pooling layers are used to reduce the dimensions of the feature maps. The pooling layer technique use a kernel that goes though the input and select one member to the output according to type of the pooling layer (In the image you can see example of Max-Pooling and Avg-Pooling). The output size, for every dimension, determined by the input size, kernel size, and stride (step size):  $\frac{input - kernel}{stride} + 1$
 
