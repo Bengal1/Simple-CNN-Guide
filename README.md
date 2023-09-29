@@ -29,7 +29,7 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 
 ![pool2](https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/09d84d77-84aa-4585-baff-fc0663bc04ae)
 
-#### Activation Function
+### Activation Function
 The Neural Network is a tool that perform estimation, when the activation function is non-linear, then a two-layer neural network can be proven to be a universal function approximator ([Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem)).
 In order to make the Neural Network perform better we use non-linear activation function on top of the Fully-connected layers and the Convolutional layers (Convolution is a linear operator).
 
@@ -40,12 +40,12 @@ Common examples of activation functions:
 
 * Rectified Linear Unit (ReLU) - $\ ReLU(x) = max(0,x) $
 
-* Leaky rectified linear unit (Leaky ReLU) - $\ LReLU(x) = \lbrace{ 0.01x  if x \le 0 \\\ x  if x > 0 } $
+* Leaky rectified linear unit (Leaky ReLU) - $\ LReLU(x) = \lbrace{ 0.01x  if x \le 0  x  if x > 0 } $
 
 * Softmax -  Softmax(x)_i = $$ \frac{e^{x_i}}{\sum_{j=1}^{J} e^{x_j}} $$ 
 
 $$
-\begin{pmatrix}a & b \\\ c & d\end{pmatrix}
+\begin{pmatrix}0.01x & if & x \le 0 \\\ x & if & x > 0\end{pmatrix}
 $$
 
 ### Loss
