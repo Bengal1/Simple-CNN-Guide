@@ -30,7 +30,7 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 #### Pooling Layer
 Pooling layers are used to reduce the dimensions of the feature maps. The pooling layer technique use a kernel that goes though the input and select one member to the output according to type of the pooling layer (In the image you can see example of Max-Pooling and Avg-Pooling). The output size, for every dimension, determined by the input size, kernel size, and stride (step size):  $\frac{input - kernel}{stride} + 1$
 
-<img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/09d84d77-84aa-4585-baff-fc0663bc04ae" align="left"/>
+<img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/09d84d77-84aa-4585-baff-fc0663bc04ae" align="right"/>
 
 
 ### Activation Function
