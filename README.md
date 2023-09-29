@@ -18,7 +18,7 @@ In this manner, every member of the output layer is affected by every member of 
 On top of the linear operation, an activation function will be applied, a non-linear function. 
 The formula below shows how to calculate the j-th output:
 ```math
-y_{j} = f( \sum_{i=1}^n w_{ji} x_i + w_{0}) 
+y_{j} = f( \sum_{i=1}^n w_{ji} x_i + w_{0} ) 
 ```
 #### Convolutional Layer
 
