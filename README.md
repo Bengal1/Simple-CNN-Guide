@@ -46,6 +46,13 @@ Common examples of activation functions:
   
 * Softmax - $\ Softmax(x)_i = \sum_{j=1}^{J}e^{x_j} $
 
+$
+  abs(x) := mycases(
+    x, x >= 0,
+    -x, x < 0,
+    word: "if"
+  )
+$
 
 ### Loss
 ### Optimization
