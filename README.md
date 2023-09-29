@@ -17,8 +17,8 @@ The Fully Connected (FC) layer consists of the weights and biases. Every member 
 In this manner, every member of the output layer is affected by every member of the input layer according to the corresponding weight.
 On top of the linear operation, an activation function will be applied, a non-linear function. 
 The formula below shows how to calculate the j-th output:
-```math
-y_{j} = f( \sum_{i=1}^n w_{ji} x_i + w_{0} ) 
+```math font-size: 200%
+y_{j} = h( \sum_{i=1}^n w_{ji} x_i + w_{0} ) 
 ```
 A network consisting solely of *Fully-Connected Layers* is called [*Multilayer perceptron*](https://en.wikipedia.org/wiki/Multilayer_perceptron).
 
@@ -28,6 +28,7 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 
 ![pool2](https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/09d84d77-84aa-4585-baff-fc0663bc04ae)
 
+#### Activation Function
 
 ### Loss
 ### Optimization
