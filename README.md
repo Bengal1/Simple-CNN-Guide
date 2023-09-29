@@ -38,9 +38,9 @@ Common examples of activation functions:
 
 * tanh - $\ tanh(x) = {{e^x - e^{-x}} \over {e^x + e^{-x}}} $
 
-* Rectified Linear Unit (ReLU)
+* Rectified Linear Unit (ReLU) - $\ ReLU(x) = max(0,x) $
 
-* Leaky rectified linear unit (Leaky ReLU)
+* Leaky rectified linear unit (Leaky ReLU) - LReLU
 
 * Softmax
 
