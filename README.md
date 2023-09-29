@@ -52,6 +52,7 @@ $$
 \frac{e^{x_i}}{\sum_{j=1} e^{x_j}}
 $$ 
 
+$$\begin{equation}Softmax(x)_{i} \right) = \frac{e^{x_i}}{\sum_{j=1} e^{x_j}} \end{equation}$$
 
 ### Loss
 ### Optimization
