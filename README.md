@@ -20,6 +20,8 @@ The formula below shows how to calculate the j-th output:
 ```math
 y_{j} = f( \sum_{i=1}^n w_{ji} x_i + w_{0} ) 
 ```
+A network consisting solely of *Fully-Connected Layers* is called [*Multilayer perceptron*](https://en.wikipedia.org/wiki/Multilayer_perceptron).
+
 #### Convolutional Layer
 
 #### Pooling Layer
