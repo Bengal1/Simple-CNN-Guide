@@ -30,6 +30,16 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 ![pool2](https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/09d84d77-84aa-4585-baff-fc0663bc04ae)
 
 #### Activation Function
+The Neural Network is a tool that perform estimation, when the activation function is non-linear, then a two-layer neural network can be proven to be a universal function approximator ([Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem)).
+In order to make the Neural Network perform better we use non-linear activation function on top of the Fully-connected layers and the Convolutional layers (Convolution is a linear operator).
+
+Common examples of activation functions:
+* Sigmoid - $\ \sigma(x) = 1/{1+e^{-x}} $
+* tanh
+* Rectified Linear Unit (ReLU)
+* Leaky rectified linear unit (Leaky ReLU)
+* Softmax
+
 
 ### Loss
 ### Optimization
