@@ -45,7 +45,7 @@ The number of output channels is the number of filters in the layer.
 Pooling layers are used to reduce the dimensions of the feature maps. The pooling layer technique use a kernel that goes though the input and select one member to the output according to type of the pooling layer (In the image you can see example of Max-Pooling and Avg-Pooling). The output size, for every dimension, determined by the input size, kernel size, and stride (step size):
 ```math
 \\
-H_{out} = \frac{H_{in} - h_{kernel}}{stride} + 1  \; ;\;
+H_{out} = \frac{H_{in} - h_{kernel}}{stride} + 1  \; ; \;
 W_{out} = \frac{W_{in} - w_{kernel}}{stride} + 1
 ```
 <img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/09d84d77-84aa-4585-baff-fc0663bc04ae" align="center"/>
@@ -64,7 +64,7 @@ Common examples of activation functions:
 
 * Leaky rectified linear unit (Leaky ReLU) - 
 ```math 
-LReLU(x) = \begin{matrix}0.01x & if & x \le 0 \\\ x \; & if & x > 0\end{matrix}
+LReLU(x) = \begin{matrix}0.01x \; & if & x \le 0 \\\ x \; & if & x > 0\end{matrix}
 ```
 * Softmax -
 ```math
