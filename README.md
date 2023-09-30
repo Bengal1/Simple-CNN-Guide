@@ -74,8 +74,8 @@ Common examples of activation functions:
 The Loss represent the difference between the output of the network and the desired output according to established criterion. In mathematical optimization and decision theory, a [*Loss function*](https://en.wikipedia.org/wiki/Loss_function)
 
 Common examples of loss functions:
-* Mean Squared Error (MSE) - $`MSE = `$
-* Cross-Entropy - $`CE = \sum_{i=1} y_i*\log{t_i}`$
+* Mean Squared Error (MSE) - $`MSE =\frac{1}{n} \sum_{i=1}^n (y_i - t_i)^2`$
+* Cross-Entropy - $`CE = \sum_{i=1}^n y_i*\log{t_i}`$
 
 ### Optimization
 
