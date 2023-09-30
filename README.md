@@ -78,13 +78,10 @@ Mathematical optimization is the selection of a best element, with regard to som
 
 Let us note the error (loss) as $`E`$ and the learning rate as $`\eta`$, and using the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), we will calculate the derivative of the error w.r.t the parameter and update the patameter. 
 Below you can see an update step of the algorithm of the i-th paramter on iteration $`t+1`$: 
+
 ```math
 w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}
 ```
-
-
-
-
 
 Common examples of gradient descent variants:
 * Stochastic gradient descent - 
