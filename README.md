@@ -74,14 +74,17 @@ Common examples of loss functions:
 * Cross-Entropy - $`CE = -\frac{1}{N} \sum_{i=0} y_i*\log{t_i}`$
 
 ### Optimization
-Mathematical optimization is the selection of a best element, with regard to some criterion, from some set of available alternatives. Optimization problem is the problem of finding the best solution from all feasible solutions. Optimization problems can be divided into two categories, with continuous variables or discrete. In our case to solve the optimization problem we use *Gradient Descent algorithm* (or its variant), in order to to find the best parameters (in every layer) that minimizes the loss.
+Mathematical optimization is the selection of a best element, with regard to some criterion, from some set of available alternatives. Optimization problem is the problem of finding the best solution from all feasible solutions. Optimization problems can be divided into two categories, with continuous variables or discrete. In our case to solve the optimization problem we use *Gradient Descent algorithm* (or its variant), in order to to find the best parameters (in every layer) that minimizes the loss. In order for us to perform the algorithm, the *Loss function* needs to be [*Differentiable*](https://en.wikipedia.org/wiki/Differentiable_function), with a differentiable loss function we calculate the [*Gradient*](https://en.wikipedia.org/wiki/Gradient) in order to find the minimum point "direction", and then we take a step towards that minimum point. The step size is adjust by the *Learning Rate*. Under certain conditions that are met with the selection of a known and common loss function, convergence of the algorithm to at least a local minimum point is guaranteed. 
 
-*Gradient Descent* is first-oder iterative algorithm.
-
-
+Let us note the error (loss) as $`E`$, and using the [chain rule](https://en.wikipedia.org/wiki/Chain_rule), we will calculate the derivative of the error w.r.t the parameter and update the patameter. Below you can see an update step of the algorithm of the i-th paramter on iteration $`t`$: 
 ```math
 w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}
 ```
+
+*Gradient Descent* is first-oder iterative algorithm. With an arbitrary starting point 
+
+
+
 
 Common examples of gradient descent variants:
 * Stochastic gradient descent - 
