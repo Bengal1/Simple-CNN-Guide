@@ -105,15 +105,16 @@ net.eval()
 correct_test = 0
 total_test = 0
 
-for i, (inputs, labels) in enumerate(test_loader):
-    inputs.to(device), labels.to(device)
+with torch.no_grad():
+    for i, (inputs, labels) in enumerate(test_loader):
+        inputs.to(device), labels.to(device)
 
-    outputs = net(inputs)
-    loss = criterion(outputs, labels)
+        outputs = net(inputs)
+        loss = criterion(outputs, labels)
     
-    # test accuracy calculation
-    _, predicted = torch.max(outputs.data, 1)
-    correct_test += (predicted == labels).sum().item()
-    total_test += labels.size(0)
+        # test accuracy calculation
+        _, predicted = torch.max(outputs.data, 1)
+        correct_test += (predicted == labels).sum().item()
+        total_test += labels.size(0)
 
 print('\nTest Accuracy: %0.3f' % ((100 * correct_test) / total_test))
