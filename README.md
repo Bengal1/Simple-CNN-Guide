@@ -83,7 +83,8 @@ Mathematical optimization is the selection of a best element, with regard to som
 w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}
 ```
 
-
+Common examples of gradient descent variants:
+* Stochastic gradient descent - 
 
 ## The Network & The Database
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
