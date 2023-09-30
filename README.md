@@ -87,7 +87,7 @@ w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}
 ```
 
 Common examples of gradient descent variants:
-* Batch gradient descent (standart) - $`w^{(t+1)}_i = w^{(t)}_i - \eta \sum_{i=0} \nabla{E_i(w^{(t)}_i)}`$
+* Batch gradient descent (standart) - $`w^{(t+1)}_i = w^{(t)}_i - \eta \sum_{j=0} \nabla{E_j(w^{(t)}_i)}`$
 * Stochastic gradient descent -
 * Momentum -
 * Adagrad -
