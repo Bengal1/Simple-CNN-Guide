@@ -66,7 +66,7 @@ Common examples of activation functions:
 ```math 
 LReLU(x) = \; \lbarce \begin{matrix}0.01x \; & if & x \le 0 \\\ x \; & if & x > 0\end{matrix}
 ```
-* Softmax -
+* Softmax - $`Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=1} e^{x_j}}`$
 ```math
 Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=1} e^{x_j}}
 ```
