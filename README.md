@@ -68,8 +68,15 @@ $$
 \begin{matrix}0.01x & if & x \le 0 \\\ x & if & x > 0\end{matrix}
 $$
 
-* Softmax - $$ Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=1} e^{x_j}} $$ 
+```math
+* Softmax - $$ Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=1} e^{x_j}} $$
+```
 
+
+* Softmax - $$ Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=1} e^{x_j}} $$ 
+```math
+Softmax - $$ Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=1} e^{x_j}} $$
+```
 
 ### Loss
 ### Optimization
