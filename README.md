@@ -79,9 +79,9 @@ Mathematical optimization is the selection of a best element, with regard to som
 *Gradient Descent* is first-oder iterative algorithm.
 
 
-
-$`w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}`$
-
+```math
+w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}
+```
 
 
 
