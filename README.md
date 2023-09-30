@@ -56,9 +56,9 @@ The Neural Network is a tool that perform estimation, when the activation functi
 In order to make the Neural Network perform better we use non-linear activation function on top of the Fully-connected layers and the Convolutional layers (Convolution is a linear operator).
 
 Common examples of activation functions:
-* Sigmoid - $\ \sigma(x) = {1 \over {1+e^{-x}}} $
+* Sigmoid - $`\sigma(x) = {1 \over {1+e^{-x}}}`$
 
-* Hyperbolic Tangent - $\ tanh(x) = {{e^x - e^{-x}} \over {e^x + e^{-x}}} $
+* Hyperbolic Tangent - $`tanh(x) = {{e^x - e^{-x}} \over {e^x + e^{-x}}}`$
 
 * Rectified Linear Unit (ReLU) - $`ReLU(x) = max(0,x)`$
 
@@ -74,8 +74,8 @@ Common examples of activation functions:
 The Loss represent the difference between the output of the network and the desired output according to established criterion. In mathematical optimization and decision theory, a [*Loss function*](https://en.wikipedia.org/wiki/Loss_function)
 
 Common examples of loss functions:
-* Mean Squared Error (MSE) -
-* Cross-Entropy - 
+* Mean Squared Error (MSE) - $`MSE = `$
+* Cross-Entropy - $`CE = \sum_{i=1} y_i*\log{t_i}`$
 
 ### Optimization
 
