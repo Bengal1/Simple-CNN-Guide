@@ -76,9 +76,11 @@ Common examples of loss functions:
 ### Optimization
 Mathematical optimization is the selection of a best element, with regard to some criterion, from some set of available alternatives. Optimization problem is the problem of finding the best solution from all feasible solutions. Optimization problems can be divided into two categories, with continuous variables or discrete. In our case to solve the optimization problem we use *Gradient Descent algorithm* (or its variant), in order to to find the best parameters (in every layer) that minimizes the loss.
 
+*Gradient Descent* is first-oder iterative algorithm.
 
 
-$`w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E}`$
+
+$`w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}`$
 
 
 
