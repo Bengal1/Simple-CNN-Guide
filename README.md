@@ -24,6 +24,7 @@ y_{j} = h \bigg( \sum_{i=1}^n w_{ji} x_i + w_{j0} \bigg)
 A network consisting solely of *Fully-Connected Layers* is called [*Multilayer perceptron*](https://en.wikipedia.org/wiki/Multilayer_perceptron).
 
 #### Convolutional Layer
+<img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/949de912-716e-438c-9a41-c864ba930128" align="right" height="300"/>
 
 The convolutional layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is portion of the layer's input. 
 
