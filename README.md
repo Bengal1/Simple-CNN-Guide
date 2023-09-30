@@ -87,12 +87,12 @@ w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}
 ```
 
 Common examples of gradient descent variants:
-* Batch gradient descent (standart) - $`w^{(t+1)}_i = w^{(t)}_i - \eta \sum_{j=0} \nabla{E_j(w^{(t)}_i)}`$
-* Stochastic gradient descent -
-* Momentum -
-* Adagrad -
-* RMSProp -
-* Adam - 
+* Batch gradient descent.
+* Stochastic gradient descent (SGD).
+* Grdient Descent with *Momentum*.
+* Adaptive Gradient (Adagrad).
+* Root Mean Squared Propagation (RMSProp).
+* Adaptive Movement Estimation (Adam).
 
 ## The Network & The Database
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
