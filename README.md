@@ -70,7 +70,7 @@ Common examples of loss functions:
 * Mean Squared Error (MSE) - $`MSE = \frac{1}{n} \sum_{i=0} (y_i - t_i)^2`$
 * Mean Absolute Error (L1 Loss) - $`MAE = \frac{\sum_{i=0} |y_i - t_i|}{n}`$
 * Mean Bias Error - $`MBE = \frac{\sum_{i=0} (y_i - t_i)}{n}`$
-* Cross-Entropy - $`CE = - \sum_{i=0} y_i*\log{t_i}`$
+* Cross-Entropy - $`CE = -\frac{1}{n} \sum_{i=0} y_i*\log{t_i}`$
 
 ### Optimization
 
