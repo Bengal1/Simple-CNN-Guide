@@ -60,7 +60,7 @@ Common examples of activation functions:
 
 * Hyperbolic Tangent - $\ tanh(x) = {{e^x - e^{-x}} \over {e^x + e^{-x}}} $
 
-* Rectified Linear Unit (ReLU) - $\ ReLU(x) = max(0,x) $
+* Rectified Linear Unit (ReLU) - $`ReLU(x) = max(0,x)`$
 
 * Leaky rectified linear unit (Leaky ReLU) - $`LReLU(x) = \begin{cases}0.01x \; & if & x \le 0 \\\ x \; & if & x > 0\end{cases}`$
 
@@ -70,7 +70,13 @@ Common examples of activation functions:
 
 
 
-### Loss
+### Loss & Loss function
+The Loss represent the difference between the output of the network and the desired output according to established criterion. In mathematical optimization and decision theory, a [*Loss function*](https://en.wikipedia.org/wiki/Loss_function)
+
+Common examples of loss functions:
+* Mean Squared Error (MSE) -
+* Cross-Entropy - 
+
 ### Optimization
 
 ## The Network & The Database
