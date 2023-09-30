@@ -70,7 +70,7 @@ Common examples of loss functions:
 * Mean Squared Error (MSE) - $`MSE = \frac{1}{N} \sum_{i=0} (y_i - t_i)^2`$
 * Mean Absolute Error (L1 Loss) - $`MAE = \frac{\sum_{i=0} |y_i - t_i|}{N}`$
 * Mean Bias Error - $`MBE = \frac{\sum_{i=0} (y_i - t_i)}{N}`$
-* Hinge (SVM) - $`H_i = \sum_{i\neq y_i}`$
+* Hinge (SVM) - $`H_i = \sum_{j\neq y_i} max(0, s_j - s_{y_j}+1)`$
 * Cross-Entropy - $`CE = -\frac{1}{N} \sum_{i=0} y_i*\log{t_i}`$
 
 ### Optimization
