@@ -57,17 +57,10 @@ In order to make the Neural Network perform better we use non-linear activation 
 
 Common examples of activation functions:
 * Sigmoid - $`\sigma(x) = {1 \over {1+e^{-x}}}`$
-
 * Hyperbolic Tangent - $`tanh(x) = {{e^x - e^{-x}} \over {e^x + e^{-x}}}`$
-
 * Rectified Linear Unit (ReLU) - $`ReLU(x) = max(0,x)`$
-
 * Leaky rectified linear unit (Leaky ReLU) - $`LReLU(x) = \begin{cases}0.01x \; & if & x \le 0 \\\ x \; & if & x > 0\end{cases}`$
-
 * Softmax - $`Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=0} e^{x_j}}`$
-
-
-
 
 
 ### Loss & Loss function
@@ -75,9 +68,11 @@ The Loss represent the difference between the output of the network and the desi
 
 Common examples of loss functions:
 * Mean Squared Error (MSE) - $`MSE =\frac{1}{n} \sum_{i=0} (y_i - t_i)^2`$
+* Mean Absolute Error (L1 Loss) - $`\frac{\sum_{i=0} |y_i - t_i|}{n}`$
 * Cross-Entropy - $`CE = \sum_{i=0} y_i*\log{t_i}`$
 
 ### Optimization
+
 
 ## The Network & The Database
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
