@@ -64,7 +64,7 @@ Common examples of activation functions:
 
 * Leaky rectified linear unit (Leaky ReLU) - $`LReLU(x) = \begin{cases}0.01x \; & if & x \le 0 \\\ x \; & if & x > 0\end{cases}`$
 
-* Softmax - $`Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=1} e^{x_j}}`$
+* Softmax - $`Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=0} e^{x_j}}`$
 
 
 
@@ -74,8 +74,8 @@ Common examples of activation functions:
 The Loss represent the difference between the output of the network and the desired output according to established criterion. In mathematical optimization and decision theory, a [*Loss function*](https://en.wikipedia.org/wiki/Loss_function)
 
 Common examples of loss functions:
-* Mean Squared Error (MSE) - $`MSE =\frac{1}{n} \sum_{i=1}^n (y_i - t_i)^2`$
-* Cross-Entropy - $`CE = \sum_{i=1}^n y_i*\log{t_i}`$
+* Mean Squared Error (MSE) - $`MSE =\frac{1}{n} \sum_{i=0} (y_i - t_i)^2`$
+* Cross-Entropy - $`CE = \sum_{i=0}^n y_i*\log{t_i}`$
 
 ### Optimization
 
