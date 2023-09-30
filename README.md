@@ -15,7 +15,7 @@ The Fully Connected (FC) layer consists of the weights and biases. Every member 
 (In the image you can see the input layer in blue, the output layer in red and the arcs that connects them are the weights)
 
 In this manner, every member of the output layer is affected by every member of the input layer according to the corresponding weight.
-On top of the linear operation, an activation function will be applied, a non-linear function. 
+On top of the linear operation, an activation function will be applied, a non-linear function. In this layer we would like to optimize the weights and the biases.
 The formula below shows how to calculate the j-th output:
 
 ```math 
@@ -27,7 +27,9 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 <img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/949de912-716e-438c-9a41-c864ba930128" align="right" height="300"/>
 
 The convolutional layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is portion of the layer's input.
-The parameters to optimize are the kernels. After forward-pass
+The parameters to optimize are the kernels (filters). 
+
+In a forward-pass, the filter go through the input in the form of scanning according to its specifications ([stride](https://deepai.org/machine-learning-glossary-and-terms/stride), [padding](https://deepai.org/machine-learning-glossary-and-terms/padding) etc.), and for every filter stop a convolution (cross-correlation) operation is performed on the corresponding portion of the input to build one output value (As you can see in the image on the side). 
 
 
 #### Pooling Layer
