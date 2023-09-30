@@ -32,6 +32,7 @@ The parameters to optimize are the kernels (filters).
 In a forward-pass, the filter go through the input in the form of scanning according to its specifications ([stride](https://deepai.org/machine-learning-glossary-and-terms/stride), [padding](https://deepai.org/machine-learning-glossary-and-terms/padding) etc.), and for every filter stop a convolution (cross-correlation) operation is performed on the corresponding portion of the input to build one output value (As you can see in the image on the side). 
 
 The size of the output can be calculated as follows:
+
 ```math 
 H_{out} = \frac{H_{in} - H_{kernel} + 2 * padding}{stride} + 1  \; ;\;
 W_{out} = \frac{W_{in} - W_{kernel} + 2 * padding}{stride} + 1
