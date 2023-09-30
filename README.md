@@ -109,7 +109,7 @@ Our Network is consist of 6 layers:
 The Simple CNN also use methods to accelerate and stablize the convergence of the network training, and avoid overfitting. 
 After the second layer and fourth layer (Max-pool) the Simple CNN applies [*Dropout*](https://en.wikipedia.org/wiki/Dilution_(neural_networks)), and after the first layer and the third layer (Convolution) it applies [*Batch-Normalization*](https://en.wikipedia.org/wiki/Batch_normalization), before the activation.
 
-##### The Model
+##### The Model with *pytorch*
 The Simple CNN is implemented with [*pytorch*](https://pytorch.org/). In order to implement the network layers and methods pytorch module [*torch.nn*](https://pytorch.org/docs/stable/nn.html) is being used. Every Layer/method apart of the fully connected gets an input of 4-dimentions *(N,C,H,W)*, were *N* is the batch size, *C* is the number of the channels and *H,W* are height and width respectively, the resolution of the images.
 There are multiple kinds of layers, methods and function that can be used from this module, and for the *Simple CNN* network we used:
 
