@@ -78,7 +78,7 @@ Mathematical optimization is the selection of a best element, with regard to som
 
 
 
-$`w^{(t+1)}_i = w^{(t)}_i - \grad{E}`$
+$`w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E}`$
 
 
 
