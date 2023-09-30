@@ -69,7 +69,7 @@ $$
 $$
 
 ```math 
-\begin{matrix}0.01x & if & x \le 0 \\\ x & if & x > 0\end{matrix}
+LReLU(x) = \begin{matrix}0.01x & if & x \le 0 \\\ x & if & x > 0\end{matrix}
 ```
 
 * 
