@@ -33,7 +33,8 @@ In a forward-pass, the filter go through the input in the form of scanning accor
 
 The size of the output can be calculated as follows:
 
-```math 
+```math
+\\
 H_{out} = \frac{H_{in} - h_{kernel} + 2 * padding}{stride} + 1  \; ;\;
 W_{out} = \frac{W_{in} - w_{kernel} + 2 * padding}{stride} + 1
 ```
