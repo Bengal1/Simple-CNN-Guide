@@ -33,8 +33,8 @@ In a forward-pass, the filter go through the input in the form of scanning accor
 
 The size of the output can be calculated as follows:
 ```math 
-H_out = \frac{H_in - H_kernel}{stride} + 1  
-W_out = \frac{W_in - W_kernel}{stride} + 1
+H_{out} = \frac{H_{in} - H_{kernel} + 2 * padding}{stride} + 1  \; ;\;
+W_{out} = \frac{W_{in} - W_{kernel} + 2 * padding}{stride} + 1
 ```
 
 #### Pooling Layer
