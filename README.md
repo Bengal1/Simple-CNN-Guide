@@ -74,7 +74,7 @@ Common examples of loss functions:
 * Cross-Entropy - $`CE = -\frac{1}{N} \sum_{i=0} y_i*\log{t_i}`$
 
 ### Optimization
-
+Mathematical optimization is the selection of a best element, with regard to some criterion, from some set of available alternatives.
 
 ## The Network & The Database
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
