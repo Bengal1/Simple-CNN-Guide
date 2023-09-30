@@ -29,7 +29,7 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 The convolutional layer is considered an essential block of the *CNN*. The convolutional layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is portion of the layer's input.
 The parameters to optimize are the kernels (filters). 
 
-In a forward-pass, the filter go through the input in the form of scanning according to its specifications ([stride](https://deepai.org/machine-learning-glossary-and-terms/stride), [padding](https://deepai.org/machine-learning-glossary-and-terms/padding) etc.), and for every filter stop a convolution (cross-correlation) operation is performed on the corresponding portion of the input to build one output value (As you can see in the image on the side). 
+In a forward-pass, the filter go through the input in the form of scanning according to its specifications ([stride](https://deepai.org/machine-learning-glossary-and-terms/stride), [padding](https://deepai.org/machine-learning-glossary-and-terms/padding) etc.), and for every filter stop a convolution (cross-correlation) operation is performed on the corresponding portion of the input to build one output value (As you can see in the image on the side). In the case of multi-channel input, for every filter all channel goes through the process and combined in the end.
 
 The size of the output can be calculated as follows:
 
@@ -37,6 +37,8 @@ The size of the output can be calculated as follows:
 H_{out} = \frac{H_{in} - H_{kernel} + 2 * padding}{stride} + 1  \; ;\;
 W_{out} = \frac{W_{in} - W_{kernel} + 2 * padding}{stride} + 1
 ```
+
+The number of output channels is the number of filters in the layer.
 
 #### Pooling Layer
 Pooling layers are used to reduce the dimensions of the feature maps. The pooling layer technique use a kernel that goes though the input and select one member to the output according to type of the pooling layer (In the image you can see example of Max-Pooling and Avg-Pooling). The output size, for every dimension, determined by the input size, kernel size, and stride (step size):  $\frac{input - kernel}{stride} + 1$
