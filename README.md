@@ -58,7 +58,7 @@ In order to make the Neural Network perform better we use non-linear activation 
 Common examples of activation functions:
 * Sigmoid - $\ \sigma(x) = {1 \over {1+e^{-x}}} $
 
-* tanh - $\ tanh(x) = {{e^x - e^{-x}} \over {e^x + e^{-x}}} $
+* tanh - $ tanh(x) = {{e^x - e^{-x}} \over {e^x + e^{-x}}} $
 
 * Rectified Linear Unit (ReLU) - $\ ReLU(x) = max(0,x) $
 
