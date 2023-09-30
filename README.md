@@ -34,8 +34,8 @@ In a forward-pass, the filter go through the input in the form of scanning accor
 The size of the output can be calculated as follows:
 
 ```math 
-H_{out} = \frac{H_{in} - H_{kernel} + 2 * padding}{stride} + 1  \; ;\;
-W_{out} = \frac{W_{in} - W_{kernel} + 2 * padding}{stride} + 1
+H_{out} = \frac{H_{in} - h_{kernel} + 2 \mul padding}{stride} + 1  \; ;\;
+W_{out} = \frac{W_{in} - w_{kernel} + 2 * padding}{stride} + 1
 ```
 
 The number of output channels is the number of filters in the layer.
