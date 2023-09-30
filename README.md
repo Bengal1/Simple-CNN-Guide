@@ -92,7 +92,7 @@ Common examples of gradient descent variants:
 * Grdient Descent with *Momentum*.
 * Adaptive Gradient (Adagrad).
 * Root Mean Squared Propagation (RMSProp).
-* Adaptive Movement Estimation (Adam).
+* Adaptive Moment Estimation (Adam).
 
 ## The Network & The Database
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
