@@ -89,7 +89,7 @@ w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}
 Common examples of gradient descent variants:
 * Batch gradient descent - 
 * Stochastic gradient descent -
-* Momentum Gradient Descent -
+* Momentum -
 * Adagrad -
 * RMSProp -
 * Adam - 
