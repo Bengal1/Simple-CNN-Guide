@@ -33,7 +33,7 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 The convolutional layer is considered an essential block of the *CNN*. The convolutional layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is portion of the layer's input.
 The parameters to optimize are the kernels (filters). <br/>
 
-For a better understanding of the convolution idea there is an helpful video of [3Blue1Brown](https://www.youtube.com/watch?v=KuXjwB4LzSA). <br/>
+For a better understanding of the convolution idea, there is a helpful video of [3Blue1Brown](https://www.youtube.com/watch?v=KuXjwB4LzSA). <br/>
 
 In a forward-pass, the filter go through the input in the form of scanning according to its specifications ([stride](https://deepai.org/machine-learning-glossary-and-terms/stride), [padding](https://deepai.org/machine-learning-glossary-and-terms/padding) etc.), and for every filter stop a convolution (cross-correlation) operation is performed on the corresponding portion of the input to build one output value (As you can see in the image on the side). In the case of multi-channel input, for every filter all channel goes through the process and combined in the end.
 
