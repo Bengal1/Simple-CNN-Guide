@@ -45,6 +45,7 @@ H_{out} = \frac{H_{in} - h_{kernel} + 2 * padding}{stride} + 1  \; ;\;
 W_{out} = \frac{W_{in} - w_{kernel} + 2 * padding}{stride} + 1
 ```
 
+
 The number of output channels is the number of filters in the layer.
 
 #### Pooling Layer
