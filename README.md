@@ -91,6 +91,7 @@ Below you can see an update step of the algorithm of the $`i-th`$ paramter on it
 
 ```math
 w^{(t+1)}_i = w^{(t)}_i - \eta \nabla{E(w^{(t)}_i)}
+
 ```
 
 Common examples of gradient descent variants:
