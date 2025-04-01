@@ -170,7 +170,8 @@ with torch.no_grad():
         correct_test += predicted.eq(labels).sum().item()
         total_test += labels.size(0)
 
-print('\nTest Accuracy: %0.2f' % ((100 * correct_test) / total_test))
+test_accuracy = 100 * correct_test / total_test
+print(f"\nTest Accuracy: {test_accuracy:.2f}%")
 
 
 # Plot Loss #
