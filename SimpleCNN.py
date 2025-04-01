@@ -28,7 +28,7 @@ class SimpleCNN(nn.Module):
     - No explicit Softmax (handled by CrossEntropyLoss)
     """
 
-    def __init__(self, num_classes):
+    def __init__(self, num_classes=10):
         super(SimpleCNN, self).__init__()
 
         # Convolutional layers
