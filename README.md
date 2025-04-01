@@ -146,12 +146,10 @@ There are multiple kinds of layers, methods and function that can be used from t
 
 <img src="https://github.com/user-attachments/assets/c26bc1cf-8f8b-45d5-9e71-7440706b7f01" align="center" width="1000"/>
 
+
+
 <img src="https://github.com/user-attachments/assets/8676af21-57ec-464b-a8d7-1e0777d158be" align="center" width="1000"/>
 
-```
-![loss3](https://github.com/user-attachments/assets/c26bc1cf-8f8b-45d5-9e71-7440706b7f01)
-![out3](https://github.com/user-attachments/assets/8676af21-57ec-464b-a8d7-1e0777d158be)
-```
 
 ## References
 [The Back Propagation Method for CNN](https://ieeexplore.ieee.org/abstract/document/409626)
