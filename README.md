@@ -143,7 +143,7 @@ There are multiple kinds of layers, methods and function that can be used from t
 
 ## Loss & Typical Run
 
-![loss3](https://github.com/user-attachments/assets/08deb54f-4671-4508-89f2-b7a3bc87746f)
+![loss3](https://github.com/user-attachments/assets/c26bc1cf-8f8b-45d5-9e71-7440706b7f01)
 
 
 ![out3](https://github.com/user-attachments/assets/8676af21-57ec-464b-a8d7-1e0777d158be)
