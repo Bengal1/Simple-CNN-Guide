@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 
 # Hyper Parameters #
 learning_rate = 1e-3
-num_epochs = 20
+num_epochs = 10
 batch_size = 256
 num_class = 10
 validation_split = 0.2  # 20% of training data for validation
@@ -89,7 +89,8 @@ test_dataset = datasets.MNIST(root='./data', train=False, download=True, transfo
 # Split into training (80%) and validation (20%)
 train_dataset, val_dataset = random_split(full_train_dataset,
                                         [1-validation_split, validation_split])
-# ******
+
+# Create DataLoader for training, validation and test datasets.
 train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
 val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
 test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
@@ -173,7 +174,7 @@ print('\nTest Accuracy: %0.2f' % ((100 * correct_test) / total_test))
 
 
 # Plot Loss #
-eps = list(range(1, len(train_loss) + 1))  # Assuming loss is recorded per epoch
+eps = range(1, len(train_loss) + 1)
 
 plt.figure(figsize=(10, 5))
 plt.plot(eps, train_loss, linestyle='-', color='#1f77b4', label='Train Loss', linewidth=2)
