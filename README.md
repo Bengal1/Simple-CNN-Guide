@@ -141,12 +141,14 @@ There are multiple kinds of layers, methods and function that can be used from t
 
 * [**Adam optimizer**](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) - The Adam optimization algorithm is an extension to stochastic gradient descent (SGD). Unlike SGD, The method computes individual adaptive learning rates for different parameters from estimates of first and second moments of the gradients. For more information on [Stochastic gradient descent, extensions and variants](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
 
-## Loss & Typical Run
+## Loss
 
 
 <img src="https://github.com/user-attachments/assets/6fbfc75a-2867-472c-b634-2f01e7c4f62d" align="center" width="1000"/>
 
-------------------------------------------------------------------------------------------------------------------
+
+## Typical Run
+
 
 <img src="https://github.com/user-attachments/assets/a6905cbb-3dd7-4120-acf3-e20d00cbc605" align="center" width="1000"/>
 
