@@ -55,7 +55,7 @@ Pooling layers are used to reduce the dimensions of the feature maps. The poolin
 H_{out} = \frac{H_{in} - h_{kernel}}{stride} + 1  \; ; \;
 W_{out} = \frac{W_{in} - w_{kernel}}{stride} + 1
 ```
-<img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/09d84d77-84aa-4585-baff-fc0663bc04ae" align="center"/>
+<img src="https://github.com/user-attachments/assets/b7435d41-da86-4d5d-928e-20723618cd9d" align="center"/>
 
 
 ### Activation Function
