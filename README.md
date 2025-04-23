@@ -41,7 +41,7 @@ The size of the output can be calculated as follows:
 
 ```math
 \\
-H_{out} = \left\lfloor\frac{H_{in} - h_{kernel} + 2 * padding}{stride}\right\lfloor + 1  \; ;\;
+H_{out} = \left\lfloor\frac{H_{in} - h_{kernel} + 2 * padding}{stride}\right\rfloor + 1  \; ;\;
 W_{out} = \frac{W_{in} - w_{kernel} + 2 * padding}{stride} + 1
 ```
 
