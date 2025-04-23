@@ -49,11 +49,11 @@ W_{out} = \left\lfloor\frac{W_{in} - w_{kernel} + 2 \cdot padding}{stride}\right
 The number of output channels is the number of filters in the layer.
 
 #### Pooling Layer
-Pooling layers are used to reduce the dimensions of the feature maps. The pooling layer technique use a kernel that goes though the input and select one member to the output according to type of the pooling layer (In the image you can see example of Max-Pooling and Avg-Pooling). The output size, for every dimension, determined by the input size, kernel size, and stride (step size):
+Pooling layers are used to reduce the dimensions of the feature maps. The pooling layer technique use a kernel that goes though the input and select one member to the output according to type of the pooling layer (In the image you can see example of Max-Pooling and Avg-Pooling). The output size, for every dimension, determined by the input size, kernel size, stride (step size) and padding (if applied):
 ```math
 \\
-H_{out} = \frac{H_{in} - h_{kernel}}{stride} + 1  \; ; \;
-W_{out} = \frac{W_{in} - w_{kernel}}{stride} + 1
+H_{out} = \left\lfloor\frac{H_{in} - h_{kernel} + 2 \cdot padding}{stride}\right\rfloor + 1  \; ;\;
+W_{out} = \left\lfloor\frac{W_{in} - w_{kernel} + 2 \cdot padding}{stride}\right\rfloor + 1
 ```
 <br/>
 <img src="https://github.com/user-attachments/assets/b7435d41-da86-4d5d-928e-20723618cd9d" align="center"/>
