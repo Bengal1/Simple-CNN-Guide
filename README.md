@@ -49,7 +49,7 @@ W_{out} = \left\lfloor\frac{W_{in} - w_{kernel} + 2 \cdot padding}{stride}\right
 The number of output channels is the number of filters in the layer.
 
 #### Pooling Layer
-Pooling layers are used to reduce the dimensions of the feature maps. The pooling layer technique use a kernel that goes though the input and select one member to the output according to type of the pooling layer (In the image you can see example of Max-Pooling and Avg-Pooling). The output size, for every dimension, determined by the input size, kernel size, stride (step size) and padding (if applied):
+A pooling layer is used in Convolutional Neural Networks (CNNs) to reduce the spatial dimensions (height and width) of feature maps while preserving the most important information. The pooling layer technique use a kernel that goes though the input and extract one value to the output according to type of the pooling layer (In the figure below you can see example of Max-Pooling and Avg-Pooling). The output size, for every dimension, determined by the input size, kernel size, stride (step size) and padding (if applied):
 ```math
 \\
 H_{out} = \left\lfloor\frac{H_{in} - h_{kernel} + 2 \cdot padding}{stride}\right\rfloor + 1  \; ;\;
