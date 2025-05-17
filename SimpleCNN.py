@@ -23,7 +23,7 @@ class SimpleCNN(nn.Module):
     Architecture:
     - 2 Convolutional layers with ReLU and Batch Normalization
     - 2 Max Pooling layers
-    - 2 Dropout layers for regularization
+    - 2 Dropout for regularization
     - 2 Fully Connected (FC) layers
     - No explicit Softmax (handled by CrossEntropyLoss)
     """
@@ -39,17 +39,17 @@ class SimpleCNN(nn.Module):
         self.max1 = nn.MaxPool2d(kernel_size=2, stride=2)
         self.max2 = nn.MaxPool2d(kernel_size=2, stride=2)
 
-        # Dropout layers for regularization
-        self.dropout1 = nn.Dropout(p=0.45)
-        self.dropout2 = nn.Dropout(p=0.35)
-
-        # Batch Normalization layers
-        self.batch1 = nn.BatchNorm2d(num_features=32)
-        self.batch2 = nn.BatchNorm2d(num_features=64)
-
         # Fully Connected layers
         self.fc1 = nn.Linear(in_features=64 * 4 * 4, out_features=512)
         self.fc2 = nn.Linear(in_features=512, out_features=num_classes)
+
+        # Dropout
+        self.dropout1 = nn.Dropout(p=0.45)
+        self.dropout2 = nn.Dropout(p=0.35)
+
+        # Batch Normalization
+        self.batch1 = nn.BatchNorm2d(num_features=32)
+        self.batch2 = nn.BatchNorm2d(num_features=64)
 
     def forward(self, x):
         """
