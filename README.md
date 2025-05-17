@@ -10,6 +10,8 @@ This Repository is built for learning purposes, and its goal is to help people w
 ## Convolutional Neural Network
 In this section we will briefly go through CNN properties and components. *CNN* is type of Feed-Forward Network which learns to perform tasks like classification, the CNN does it through feature (parameters) optimization. with a given input we will perform a *Forward-pass* (Forward propagation), calculation and storage of intermediate variables, in forward-pass each layer performs its actions according to its type and the relevant inner variables are stored. the loss will of the network will be calculated according to the criterion, chosen *Loss function*. Then we will perform [*Backpropagation*](https://en.wikipedia.org/wiki/Backpropagation), a process designed to correct the parameters of each layer, using [*Grdient Descent Algorithm*](https://en.wikipedia.org/wiki/Gradient_descent) in order to find the minimum (local) of the *Loss function*.
 
+The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
+
 ### Layers
 In *Convolutional Neural Network* there are several types of layers, we will discuss the types that are relevant to our SimpleCNN model.
 #### Fully-Connected Layer
@@ -113,10 +115,8 @@ This network is trained on MNIST database, a simple gray-scale images of a write
 The MNIST database has 70,000 images, such that the training dataset is 60,000 images and the test dataset is 10,000 images.
 For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database)
 
-## The Model
-The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
-### *Simple CNN*
-Our Network is consist of 6 layers:
+## The *Simple CNN* Model
+Our Model is consist of 6 layers:
 1. Convolution Layer with a kernel size of 5x5, and [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) activation function.
 2. Max-pool Layer with a kernel size of 2x2.
 3. Convolution Layer with a kernel size of 5x5and ReLU activation function..
@@ -139,7 +139,7 @@ There are multiple kinds of layers, methods and function that can be used from t
 * [**Dropout**](https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html) - During training, randomly zeroes some of the elements of the input tensor with a given probability *p* using samples from a Bernoulli distribution. Each channel will be zeroed out independently on every forward call.
 * [**BatchNorm2d**](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, sclicing through *C* (channel dimesion) and computing mean ($`\mu`$) and variance ($`\sigma^2`$) on *(N,H,W)* slice. Using that statistics normalizing each slice $`\hat{x} = \frac{(x - μ)}{\sqrt{σ^{2} + ε}}`$.
 
-#### Defining the Model
+### Defining the Model
 
 ```ruby
 class SimpleCNN(nn.Module):
@@ -178,7 +178,7 @@ class SimpleCNN(nn.Module):
         self.fc2 = nn.Linear(in_features=512, out_features=num_classes)
 ```
 
-#### Training Epoch
+### Training Epoch
 ```ruby
     for inputs, labels in train_loader:
         inputs, labels = inputs.to(device), labels.to(device)
