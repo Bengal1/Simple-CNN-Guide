@@ -161,6 +161,7 @@ There are multiple kinds of layers, methods and function that can be used from t
 ### Defining the Model
 
 ```ruby
+
 class SimpleCNN(nn.Module):
     """
     A simple Convolutional Neural Network (CNN) for MNIST classification.
@@ -168,7 +169,7 @@ class SimpleCNN(nn.Module):
     Architecture:
     - 2 Convolutional layers with ReLU and Batch Normalization
     - 2 Max Pooling layers
-    - 2 Dropout layers for regularization
+    - 2 Dropout for regularization
     - 2 Fully Connected (FC) layers
     - No explicit Softmax (handled by CrossEntropyLoss)
     """
@@ -180,11 +181,11 @@ class SimpleCNN(nn.Module):
         self.conv1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=5)
         self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=5)
 
-        # Max pooling layers
+        # Max-Pooling layers
         self.max1 = nn.MaxPool2d(kernel_size=2, stride=2)
         self.max2 = nn.MaxPool2d(kernel_size=2, stride=2)
 
-        # Fully Connected layers
+        # Fully-Connected layers
         self.fc1 = nn.Linear(in_features=64 * 4 * 4, out_features=512)
         self.fc2 = nn.Linear(in_features=512, out_features=num_classes)
 
