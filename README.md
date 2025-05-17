@@ -97,6 +97,7 @@ Then we scale ($`γ`$) and shift ($`β`$):
 ```math
 ⇨  y = γ·\hat{x} + β
 ```
+where $`γ`$ and $`β`$ are learned scale and shift parameters. This stabilizes and speeds up training and adds a bit of regularization through batch noise.
 
 ### Optimization
 <img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/13b401b9-54c8-4f4c-8588-441385342c6c" align="right" height="200"/>
