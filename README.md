@@ -276,10 +276,6 @@ for epoch in range(num_epochs):
 
     val_accuracy = 100 * correct_val / total_val
     validation_loss.append(total_val_loss / len(val_loader))
-
-    print(f"Epoch {epoch + 1}: "
-          f"Train Loss: {train_loss[epoch]:.4f}, Train Accuracy: {train_accuracy:.2f}% | "
-          f"Validation Loss: {validation_loss[epoch]:.4f}, Validation Accuracy: {val_accuracy:.2f}%")
 ```
 
 ### *Loss & Optimization*
