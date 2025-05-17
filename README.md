@@ -7,7 +7,7 @@ This Repository is built for learning purposes, and its goal is to help people w
 * Python 3
 * [Pytorch](https://pytorch.org/get-started/locally/)
 
-## Convolutional Neural Network
+## Convolutional Neural Network (CNN)
 In this section we will briefly go through CNN properties and components. *CNN* is type of Feed-Forward Network which learns to perform tasks like classification, the CNN does it through feature (parameters) optimization. with a given input we will perform a *Forward-pass* (Forward propagation), calculation and storage of intermediate variables, in forward-pass each layer performs its actions according to its type and the relevant inner variables are stored. the loss will of the network will be calculated according to the criterion, chosen *Loss function*. Then we will perform [*Backpropagation*](https://en.wikipedia.org/wiki/Backpropagation), a process designed to correct the parameters of each layer, using [*Grdient Descent Algorithm*](https://en.wikipedia.org/wiki/Gradient_descent) in order to find the minimum (local) of the *Loss function*.
 
 The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
@@ -83,6 +83,14 @@ Common examples of loss functions:
 * Hinge (SVM) - $`H_i = \sum_{j\neq y_i} max(0, s_j - s_{y_j}+1)`$
 * Cross-Entropy - $`CE = -\frac{1}{N} \sum_{i=0} y_i*\log{t_i}`$
 
+### Regularization
+Regularization aims to reduce overfitting by improving generalization to unseen data. In our model, Simple CNN, we use *Dropout* and *Batch Normalization* methods.
+***Dropout*** is a regularization technique where, during training, a fixed percentage of neurons (e.g. 50%) are randomly set to zero in each forward pass, preventing co-adaptation of neurons. This prevents over-reliance on specific neurons and encourages redundancy and robustness. At inference time, all neurons are active, and their outputs are scaled to match the expected value during training.
+***Batch Normalization*** aims to stabilize and accelerate training by ensuring each channel’s activations have consistent statistics across mini‑batches. this method normalizes each feature channel’s activations to zero mean and unit variance over a mini-batch. For a layer’s inputs *x*, you compute per‑channel mean $`μ`$ and variance $`σ^2`$, then transform: <br/>
+\hat{x} = \frac{(x - μ)}{\sqrt{σ^{2} + ε}}
+⇨  y = γ·\hat{x} + β
+
+
 ### Optimization
 <img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/13b401b9-54c8-4f4c-8588-441385342c6c" align="right" height="200"/>
 
@@ -137,7 +145,7 @@ There are multiple kinds of layers, methods and function that can be used from t
 * [**MaxPool2d**](https://pytorch.org/docs/stable/generated/torch.nn.MaxPool2d.html) - Applies a 2D max pooling over an input signal composed of several input planes.
 * [**Linear**](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) - Applies a linear transformation to the layer's input, $`y = xA^T+b`$. In case of 4D input we flatten it to 2D, *(N,H)* / *(N,C·H·W)* with the same notations above.
 * [**Dropout**](https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html) - During training, randomly zeroes some of the elements of the input tensor with a given probability *p* using samples from a Bernoulli distribution. Each channel will be zeroed out independently on every forward call.
-* [**BatchNorm2d**](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, sclicing through *C* (channel dimesion) and computing mean ($`\mu`$) and variance ($`\sigma^2`$) on *(N,H,W)* slice. Using that statistics normalizing each slice $`\hat{x} = \frac{(x - μ)}{\sqrt{σ^{2} + ε}}`$.
+* [**BatchNorm2d**](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, sclicing through *C* (channel dimesion) and computing mean ($`\mu`$) and variance ($`\sigma^2`$) on *(N,H,W)* slice. Using that statistics normalizing each slice.
 
 ### Defining the Model
 
