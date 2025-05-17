@@ -104,7 +104,7 @@ Common examples of gradient descent variants:
 * Adaptive Moment Estimation (Adam).
 
 ## The Database
-The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
+MNIST is a classic dataset of handwritten digits that’s become the “hello world” of computer vision and machine learning. By providing a simple, standardized set of images paired with labels, it lets newcomers and experts alike quickly prototype and benchmark classification algorithms, explore feature learning, and compare new techniques against a familiar baseline.
 ### *MNIST Database*
 This network is trained on MNIST database, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
 
@@ -114,6 +114,7 @@ The MNIST database has 70,000 images, such that the training dataset is 60,000 i
 For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database)
 
 ## The Model
+The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
 ### *Simple CNN*
 Our Network is consist of 6 layers:
 1. Convolution Layer with a kernel size of 5x5, and [ReLU](https://en.wikipedia.org/wiki/Rectifier_(neural_networks)) activation function.
