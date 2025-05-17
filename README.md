@@ -138,6 +138,8 @@ There are multiple kinds of layers, methods and function that can be used from t
 * [**Dropout**](https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html) - During training, randomly zeroes some of the elements of the input tensor with a given probability *p* using samples from a Bernoulli distribution. Each channel will be zeroed out independently on every forward call.
 * [**BatchNorm2d**](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, sclicing through *N* and computing statistics on *(N,H,W)* slices.
 
+#### Defining the Model
+
 ```ruby
 class SimpleCNN(nn.Module):
     """
@@ -202,6 +204,83 @@ class SimpleCNN(nn.Module):
 
 ```
 
+#### Pre-Training Set-ups
+
+```ruby
+# Set device
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print('Using', device, '\n')
+
+# Load MNIST dataset #
+full_train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=ToTensor())
+test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=ToTensor())
+
+# Split into training (80%) and validation (20%)
+train_dataset, val_dataset = random_split(full_train_dataset,
+                                        [1-validation_split, validation_split])
+
+# Create DataLoader for training, validation and test datasets.
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
+# Instantiate the model
+model = SimpleCNN(num_classes=num_class).to(device)
+
+# Loss & Optimization #
+criterion = nn.CrossEntropyLoss().to(device)
+optimizer = optim.Adam(model.parameters(), lr=learning_rate)
+```
+
+#### Training (& Validation)
+```ruby
+
+# Train & Validation #
+for epoch in range(num_epochs):
+    model.train()  # training mode
+    correct_train, total_train, total_train_loss = 0, 0, 0
+
+    for inputs, labels in train_loader:
+        inputs, labels = inputs.to(device), labels.to(device)
+
+        optimizer.zero_grad()               # Reset gradients
+        outputs = model(inputs)             # Forward pass
+        loss = criterion(outputs, labels)   # Compute loss
+        loss.backward()                     # Backpropagation
+        optimizer.step()                    # Update parameters
+
+        # Training accuracy calculation
+        total_train_loss += loss.item()
+        _, predicted = outputs.max(1)
+        correct_train += predicted.eq(labels).sum().item()
+        total_train += labels.size(0)
+
+    train_accuracy = 100 * correct_train / total_train
+    train_loss.append(total_train_loss / len(train_loader))
+
+    # Validation
+    model.eval()  # Set to evaluation mode
+    total_val_loss, correct_val, total_val = 0, 0, 0
+
+    with torch.no_grad():
+        for inputs, labels in val_loader:
+            inputs, labels = inputs.to(device), labels.to(device)
+            outputs = model(inputs)
+            loss = criterion(outputs, labels)
+
+            # Validation accuracy calculation
+            total_val_loss += loss.item()
+            _, predicted = outputs.max(1)
+            correct_val += predicted.eq(labels).sum().item()
+            total_val += labels.size(0)
+
+    val_accuracy = 100 * correct_val / total_val
+    validation_loss.append(total_val_loss / len(val_loader))
+
+    print(f"Epoch {epoch + 1}: "
+          f"Train Loss: {train_loss[epoch]:.4f}, Train Accuracy: {train_accuracy:.2f}% | "
+          f"Validation Loss: {validation_loss[epoch]:.4f}, Validation Accuracy: {val_accuracy:.2f}%")
+```
 
 ### *Loss & Optimization*
 * [**Cross Enthropy Loss**](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) - This criterion computes the cross entropy loss between input logits and target. Loss function is a function that maps an event or values of one or more variables onto a real number intuitively representing some "loss" associated with the event. The Cross Enthropy Loss function is commonly used in classification tasks both in traditional ML and deep learning, and it also has its advantages. For more information on [Loss function](https://en.wikipedia.org/wiki/Loss_function) and [Cross Enthropy Loss function](https://wandb.ai/sauravmaheshkar/cross-entropy/reports/What-Is-Cross-Entropy-Loss-A-Tutorial-With-Code--VmlldzoxMDA5NTMx). 
