@@ -204,44 +204,25 @@ class SimpleCNN(nn.Module):
 
 ```
 
-#### Pre-Training Set-ups
-
-```ruby
-# Set device
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print('Using', device, '\n')
-
-# Load MNIST dataset #
-full_train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=ToTensor())
-test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=ToTensor())
-
-# Split into training (80%) and validation (20%)
-train_dataset, val_dataset = random_split(full_train_dataset,
-                                        [1-validation_split, validation_split])
-
-# Create DataLoader for training, validation and test datasets.
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
-test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-
-# Instantiate the model
-model = SimpleCNN(num_classes=num_class).to(device)
-
-# Loss & Optimization #
-criterion = nn.CrossEntropyLoss().to(device)
-optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-```
-
 #### Training Epoch
 ```ruby
     for inputs, labels in train_loader:
         inputs, labels = inputs.to(device), labels.to(device)
 
-        optimizer.zero_grad()               # Reset gradients
-        outputs = model(inputs)             # Forward pass
-        loss = criterion(outputs, labels)   # Compute loss
-        loss.backward()                     # Backpropagation
-        optimizer.step()                    # Update parameters
+        # Reset gradients
+        optimizer.zero_grad()               
+
+        # Forward pass
+        outputs = model(inputs)
+
+        # Compute loss
+        loss = criterion(outputs, labels)   
+
+        # Backpropagation
+        loss.backward()
+
+        # Update parameters
+        optimizer.step()
 
         # Training accuracy calculation
         total_train_loss += loss.item()
