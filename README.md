@@ -223,12 +223,6 @@ class SimpleCNN(nn.Module):
 
         # Update parameters
         optimizer.step()
-
-        # Training accuracy calculation
-        total_train_loss += loss.item()
-        _, predicted = outputs.max(1)
-        correct_train += predicted.eq(labels).sum().item()
-        total_train += labels.size(0)
 ```
 
 ### *Loss & Optimization*
