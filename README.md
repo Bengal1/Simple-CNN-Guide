@@ -86,7 +86,7 @@ Common examples of loss functions:
 ### Regularization
 Regularization aims to reduce overfitting by improving generalization to unseen data. In our model, Simple CNN, we use *Dropout* and *Batch Normalization* methods.<br/>
 
-***Dropout*** is a regularization technique where, during training, a fixed percentage of neurons (e.g. 50%) are randomly set to zero in each forward pass, preventing co-adaptation of neurons. This prevents over-reliance on specific neurons and encourages redundancy and robustness. At inference time, all neurons are active, and their outputs are scaled to match the expected value during training. <br/>
+***Dropout*** is a regularization technique where, during training, a fixed percentage of neurons (e.g. 50%) are randomly set to zero in each forward pass, preventing co-adaptation of neurons. This prevents over-reliance on specific neurons and encourages redundancy and robustness. <br/> At inference time, all neurons are active, and their outputs are scaled to match the expected value during training. <br/>
 
 ***Batch Normalization*** aims to stabilize and accelerate training by ensuring each channel’s activations have consistent statistics across mini‑batches. This method normalizes each feature channel’s activations to zero mean and unit variance over a mini-batch thereby It reduces internal covariate shift and can have a slight regularizing effect (due to batch noise). <br/> 
 For a layer’s inputs $`x`$, you compute per‑channel mean $`μ`$ and variance $`σ^2`$, then transform: <br/>
