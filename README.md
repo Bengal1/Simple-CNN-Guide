@@ -232,14 +232,8 @@ criterion = nn.CrossEntropyLoss().to(device)
 optimizer = optim.Adam(model.parameters(), lr=learning_rate)
 ```
 
-#### Training (& Validation)
+#### Training Epoch
 ```ruby
-
-# Train & Validation #
-for epoch in range(num_epochs):
-    model.train()  # training mode
-    correct_train, total_train, total_train_loss = 0, 0, 0
-
     for inputs, labels in train_loader:
         inputs, labels = inputs.to(device), labels.to(device)
 
@@ -254,28 +248,6 @@ for epoch in range(num_epochs):
         _, predicted = outputs.max(1)
         correct_train += predicted.eq(labels).sum().item()
         total_train += labels.size(0)
-
-    train_accuracy = 100 * correct_train / total_train
-    train_loss.append(total_train_loss / len(train_loader))
-
-    # Validation
-    model.eval()  # Set to evaluation mode
-    total_val_loss, correct_val, total_val = 0, 0, 0
-
-    with torch.no_grad():
-        for inputs, labels in val_loader:
-            inputs, labels = inputs.to(device), labels.to(device)
-            outputs = model(inputs)
-            loss = criterion(outputs, labels)
-
-            # Validation accuracy calculation
-            total_val_loss += loss.item()
-            _, predicted = outputs.max(1)
-            correct_val += predicted.eq(labels).sum().item()
-            total_val += labels.size(0)
-
-    val_accuracy = 100 * correct_val / total_val
-    validation_loss.append(total_val_loss / len(val_loader))
 ```
 
 ### *Loss & Optimization*
