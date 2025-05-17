@@ -135,8 +135,8 @@ There are multiple kinds of layers, methods and function that can be used from t
 * [**Conv2d**](https://pytorch.org/docs/stable/generated/torch.nn.Conv2d.html) - Applies a 2D convolution over an input signal composed of several input planes. 
 * [**MaxPool2d**](https://pytorch.org/docs/stable/generated/torch.nn.MaxPool2d.html) - Applies a 2D max pooling over an input signal composed of several input planes.
 * [**Linear**](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) - Applies a linear transformation to the layer's input, $`y = xA^T+b`$. In case of 4D input we flatten it to 2D, *(N,H)* / *(N,C·H·W)* with the same notations above.
-* [**Dropout**](https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html) - During training, randomly zeroes some of the elements of the input tensor with a given probability *p* using samples from a Bernoulli distribution. Each channel will be zeroed out independently on every forward call.
-* [**BatchNorm2d**](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, sclicing through *C* and computing statistics on *(N,H,W)* slices such as mean ($`\mu`$) and variance ($`\sigma^2`$) and normalize each slice $`\hat{x} = \frac{(x - μ)}{\sqrt{σ^{2} + ε}}`$.
+* [**Dropout**](https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html) - During training, randomly zeroes some of the elements of the input tensor with a given probability *p* using samples from a Bernoulli distribution. Each channel will be zeroed out independently and randomly on every forward call.
+* [**BatchNorm2d**](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, sclicing through *C* (channel dimesion) and computing mean ($`\mu`$) and variance ($`\sigma^2`$) on *(N,H,W)* slice. Using that statistics normalizing each slice $`\hat{x} = \frac{(x - μ)}{\sqrt{σ^{2} + ε}}`$.
 
 #### Defining the Model
 
