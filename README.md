@@ -128,7 +128,7 @@ Our Network is consist of 6 layers:
 The Simple CNN also use methods to accelerate and stablize the convergence of the network training, and avoid overfitting. 
 After the second layer and fourth layer (Max-pool) the Simple CNN applies [*Dropout*](https://en.wikipedia.org/wiki/Dilution_(neural_networks)), and after the first layer and the third layer (Convolution) it applies [*Batch-Normalization*](https://en.wikipedia.org/wiki/Batch_normalization), before the activation.
 
-#### The Model with *pytorch*
+### The Model with *pytorch*
 The Simple CNN is implemented with [*pytorch*](https://pytorch.org/). In order to implement the network layers and methods pytorch module [*torch.nn*](https://pytorch.org/docs/stable/nn.html) is being used. Every Layer/method apart of the fully connected gets an input of 4-dimentions *(N,C,H,W)*, were *N* is the batch size, *C* is the number of the channels and *H,W* are height and width respectively, the resolution of the images.
 There are multiple kinds of layers, methods and function that can be used from this module, and for the *Simple CNN* network we used:
 
@@ -137,6 +137,71 @@ There are multiple kinds of layers, methods and function that can be used from t
 * [**Linear**](https://pytorch.org/docs/stable/generated/torch.nn.Linear.html) - Applies a linear transformation to the layer's input, $`y = xA^T+b`$. In that case the input is 2-dimentions, *(N,H)* with the same notations above.
 * [**Dropout**](https://pytorch.org/docs/stable/generated/torch.nn.Dropout.html) - During training, randomly zeroes some of the elements of the input tensor with a given probability *p* using samples from a Bernoulli distribution. Each channel will be zeroed out independently on every forward call.
 * [**BatchNorm2d**](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, sclicing through *N* and computing statistics on *(N,H,W)* slices.
+
+```ruby
+class SimpleCNN(nn.Module):
+    """
+    A simple Convolutional Neural Network (CNN) for MNIST classification.
+
+    Architecture:
+    - 2 Convolutional layers with ReLU and Batch Normalization
+    - 2 Max Pooling layers
+    - 2 Dropout layers for regularization
+    - 2 Fully Connected (FC) layers
+    - No explicit Softmax (handled by CrossEntropyLoss)
+    """
+
+    def __init__(self, num_classes = 10):
+        super(SimpleCNN, self).__init__()
+
+        # Convolutional layers
+        self.conv1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=5)
+        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=5)
+
+        # Max pooling layers
+        self.max1 = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.max2 = nn.MaxPool2d(kernel_size=2, stride=2)
+
+        # Dropout layers for regularization
+        self.dropout1 = nn.Dropout(p=0.45)
+        self.dropout2 = nn.Dropout(p=0.35)
+
+        # Batch Normalization layers
+        self.batch1 = nn.BatchNorm2d(num_features=32)
+        self.batch2 = nn.BatchNorm2d(num_features=64)
+
+        # Fully Connected layers
+        self.fc1 = nn.Linear(in_features=64 * 4 * 4, out_features=512)
+        self.fc2 = nn.Linear(in_features=512, out_features=num_classes)
+
+    def forward(self, x):
+        """
+        Forward pass of the network.
+        Note: CrossEntropyLoss handles softmax
+
+        Args:
+            x (torch.Tensor): Input batch of shape (batch_size, 1, 28, 28)
+
+        Returns:
+            torch.Tensor: Output logits of shape (batch_size, num_classes)
+        """
+        x = self.conv1(x)                   # Convolution Layer 1
+        x = F.relu(self.batch1(x))          # Batch Normalization + ReLU
+        x = self.max1(x)                    # Max Pooling
+        x = self.dropout1(x)                # Dropout
+
+        x = self.conv2(x)                   # Convolution Layer 2
+        x = F.relu(self.batch2(x))          # Batch Normalization + ReLU
+        x = self.max2(x)                    # Max Pooling
+        x = self.dropout2(x)                # Dropout
+
+        x = torch.flatten(x, start_dim=1)   # Flatten for FC layer
+        x = F.relu(self.fc1(x))             # Fully Connected Layer 1 + ReLU
+        x = self.fc2(x)                     # Fully Connected Layer 2 (logits)
+        return x
+
+```
+
 
 ### *Loss & Optimization*
 * [**Cross Enthropy Loss**](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) - This criterion computes the cross entropy loss between input logits and target. Loss function is a function that maps an event or values of one or more variables onto a real number intuitively representing some "loss" associated with the event. The Cross Enthropy Loss function is commonly used in classification tasks both in traditional ML and deep learning, and it also has its advantages. For more information on [Loss function](https://en.wikipedia.org/wiki/Loss_function) and [Cross Enthropy Loss function](https://wandb.ai/sauravmaheshkar/cross-entropy/reports/What-Is-Cross-Entropy-Loss-A-Tutorial-With-Code--VmlldzoxMDA5NTMx). 
