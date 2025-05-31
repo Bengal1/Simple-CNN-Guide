@@ -3,7 +3,11 @@ This is a practical guide for building [*Convolutional Neural Network (CNN)*](ht
 In this guide I will explain the steps to write code for basic CNN, with link to relevant to topics. The reader sould have basic knowledge of [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) for him to use it. 
 
 This Repository is built for learning purposes, and its goal is to help people who would like to start coding neural networks.
+
 ## Requirements
+[![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)](https://www.python.org/)
+[![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/)
+
 * Python 3
 * [Pytorch](https://pytorch.org/get-started/locally/)
 
