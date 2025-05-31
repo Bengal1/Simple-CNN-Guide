@@ -5,8 +5,8 @@ In this guide I will explain the steps to write code for basic CNN, with link to
 This Repository is built for learning purposes, and its goal is to help people who would like to start coding neural networks.
 
 ## Requirements
-[![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)](https://www.python.org/) <br/>
-[![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/) <br/>
+- [![Python](https://img.shields.io/badge/Python-3.x-blue?logo=python&logoColor=white)](https://www.python.org/) <br/>
+- [![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/) <br/>
 
 ## Convolutional Neural Network (CNN)
 In this section we will briefly go through CNN properties and components. *CNN* is type of Feed-Forward Network which learns to perform tasks like classification, the CNN does it through feature (parameters) optimization. with a given input we will perform a *Forward-pass* (Forward propagation), calculation and storage of intermediate variables, in forward-pass each layer performs its actions according to its type and the relevant inner variables are stored. the loss will of the network will be calculated according to the criterion, chosen *Loss function*. Then we will perform [*Backpropagation*](https://en.wikipedia.org/wiki/Backpropagation), a process designed to correct the parameters of each layer, using [*Grdient Descent Algorithm*](https://en.wikipedia.org/wiki/Gradient_descent) in order to find the minimum (local) of the *Loss function*.
