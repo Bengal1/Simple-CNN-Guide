@@ -59,7 +59,7 @@ H_{out} = \left\lfloor\frac{H_{in} - h_{kernel} + 2 \cdot padding}{stride}\right
 W_{out} = \left\lfloor\frac{W_{in} - w_{kernel} + 2 \cdot padding}{stride}\right\rfloor + 1
 ```
 <br/>
-<img src="https://github.com/user-attachments/assets/b7435d41-da86-4d5d-928e-20723618cd9d" align="center"/>
+<img src="https://github.com/user-attachments/assets/32f652b8-78be-4726-9a85-94fcd25af58f" align="center"/>
 
 
 ### Activation Function
