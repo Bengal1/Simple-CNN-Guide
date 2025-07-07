@@ -202,7 +202,6 @@ class SimpleCNN(nn.Module):
 ### Training Epoch
 ```ruby
     for inputs, labels in train_loader:
-        inputs, labels = inputs.to(device), labels.to(device)
 
         # Reset gradients
         optimizer.zero_grad()               
