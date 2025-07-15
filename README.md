@@ -172,7 +172,7 @@ class SimpleCNN(nn.Module):
     - 2 Max Pooling layers
     - 2 Dropout for regularization
     - 2 Fully Connected (FC) layers
-    - No explicit Softmax (handled by CrossEntropyLoss)
+    - No explicit Softmax (applies by nn.CrossEntropyLoss)
     """
 
     def __init__(self, num_classes = 10):
