@@ -1,6 +1,20 @@
 """
-Simple CNN Guide
-Author: Bengal1
+===========================
+SimpleCNN MNIST Classifier
+===========================
+
+This script defines and trains a simple Convolutional Neural Network (CNN) on the MNIST digit dataset.
+It includes a clean training pipeline, evaluation routines, and plotting functionality for loss trends.
+
+Architecture:
+- Two convolutional layers with ReLU and batch normalization
+- Max pooling layers
+- Dropout layers for regularization
+- Two fully connected layers
+- Trained using CrossEntropyLoss and Adam optimizer
+
+Author:
+    Bengal1
 """
 
 import torch
@@ -13,48 +27,73 @@ from torchvision.transforms import ToTensor
 import matplotlib.pyplot as plt
 
 
-# Hyper Parameters #
+#--------------- Hyperparameters ---------------#
 learning_rate = 1e-3
 num_epochs = 10
 batch_size = 256
 num_class = 10
 validation_split = 0.2  # 20% of training data for validation
+#-------------- Config Parameters --------------#
+input_channels = 1
+conv1_out_channels = 32
+conv2_out_channels = 64
+conv_kernel_size = 5
+pool_kernel_size = 2
+pool_stride = 2
+fc1_in = 64 * 4 * 4
+fc2_in = 512
+dropout1_rate = 0.45
+dropout2_rate = 0.35
 
 
+#--------------- Model Definition ---------------#
 class SimpleCNN(nn.Module):
     """
-    A simple Convolutional Neural Network (CNN) for MNIST classification.
+    A lightweight Convolutional Neural Network for handwritten digit classification on MNIST.
 
-    Architecture:
-    - 2 Convolutional layers with ReLU and Batch Normalization
-    - 2 Max Pooling layers
-    - 2 Dropout for regularization
-    - 2 Fully Connected (FC) layers
-    - No explicit Softmax (handled by CrossEntropyLoss)
+    This model consists of two convolutional blocks (Conv2D → BatchNorm → ReLU → MaxPool → Dropout),
+    followed by two fully connected layers. It outputs raw logits and is intended to be used with
+    `nn.CrossEntropyLoss`, which applies softmax internally.
+
+    Attributes:
+        conv1 (nn.Conv2d): First convolutional layer.
+        batch1 (nn.BatchNorm2d): Batch normalization after the first conv layer.
+        max1 (nn.MaxPool2d): Max pooling after the first conv block.
+        dropout1 (nn.Dropout): Dropout after the first pooling layer.
+
+        conv2 (nn.Conv2d): Second convolutional layer.
+        batch2 (nn.BatchNorm2d): Batch normalization after the second conv layer.
+        max2 (nn.MaxPool2d): Max pooling after the second conv block.
+        dropout2 (nn.Dropout): Dropout after the second pooling layer.
+
+        fc1 (nn.Linear): First fully connected layer (dense).
+        fc2 (nn.Linear): Output layer mapping to class logits.
     """
 
-    def __init__(self, num_classes = 10):
+    def __init__(self, num_classes: int = 10):
         super(SimpleCNN, self).__init__()
 
         # Convolutional layers
-        self.conv1 = nn.Conv2d(in_channels=1, out_channels=32, kernel_size=5)
-        self.conv2 = nn.Conv2d(in_channels=32, out_channels=64, kernel_size=5)
+        self.conv1 = nn.Conv2d(in_channels=input_channels,
+                               out_channels=conv1_out_channels, kernel_size=conv_kernel_size)
+        self.conv2 = nn.Conv2d(in_channels=conv1_out_channels,
+                               out_channels=conv2_out_channels, kernel_size=conv_kernel_size)
 
         # Max-Pooling layers
-        self.max1 = nn.MaxPool2d(kernel_size=2, stride=2)
-        self.max2 = nn.MaxPool2d(kernel_size=2, stride=2)
+        self.max1 = nn.MaxPool2d(kernel_size=pool_kernel_size, stride=pool_stride)
+        self.max2 = nn.MaxPool2d(kernel_size=pool_kernel_size, stride=pool_stride)
 
         # Fully-Connected layers
-        self.fc1 = nn.Linear(in_features=64 * 4 * 4, out_features=512)
-        self.fc2 = nn.Linear(in_features=512, out_features=num_classes)
+        self.fc1 = nn.Linear(in_features=fc1_in, out_features=fc2_in)
+        self.fc2 = nn.Linear(in_features=fc2_in, out_features=num_classes)
 
         # Dropout
-        self.dropout1 = nn.Dropout(p=0.45)
-        self.dropout2 = nn.Dropout(p=0.35)
+        self.dropout1 = nn.Dropout(p=dropout1_rate)
+        self.dropout2 = nn.Dropout(p=dropout2_rate)
 
         # Batch Normalization
-        self.batch1 = nn.BatchNorm2d(num_features=32)
-        self.batch2 = nn.BatchNorm2d(num_features=64)
+        self.batch1 = nn.BatchNorm2d(num_features=conv1_out_channels)
+        self.batch2 = nn.BatchNorm2d(num_features=conv2_out_channels)
 
     def forward(self, x):
         """
@@ -67,63 +106,50 @@ class SimpleCNN(nn.Module):
         Returns:
             torch.Tensor: Output logits of shape (batch_size, num_classes)
         """
-        x = self.conv1(x)                   # Convolution Layer 1
-        x = F.relu(self.batch1(x))          # Batch Normalization + ReLU
-        x = self.max1(x)                    # Max Pooling
-        x = self.dropout1(x)                # Dropout
+        x = self.conv1(x)  # Convolution Layer 1
+        x = F.relu(self.batch1(x))  # Batch Normalization + ReLU
+        x = self.max1(x)  # Max Pooling
+        x = self.dropout1(x)  # Dropout
 
-        x = self.conv2(x)                   # Convolution Layer 2
-        x = F.relu(self.batch2(x))          # Batch Normalization + ReLU
-        x = self.max2(x)                    # Max Pooling
-        x = self.dropout2(x)                # Dropout
+        x = self.conv2(x)  # Convolution Layer 2
+        x = F.relu(self.batch2(x))  # Batch Normalization + ReLU
+        x = self.max2(x)  # Max Pooling
+        x = self.dropout2(x)  # Dropout
 
-        x = torch.flatten(x, start_dim=1)   # Flatten for FC layer
-        x = F.relu(self.fc1(x))             # Fully Connected Layer 1 + ReLU
-        x = self.fc2(x)                     # Fully Connected Layer 2 (logits)
+        x = torch.flatten(x, start_dim=1)  # Flatten for FC layer
+        x = F.relu(self.fc1(x))  # Fully Connected Layer 1 + ReLU
+        x = self.fc2(x)  # Fully Connected Layer 2 (logits)
         return x
 
 
-# Set device
-device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
-print('Using', device, '\n')
+#-------------- Training Utilities --------------#
+def train_epoch(model: nn.Module,
+                criterion: nn.modules.loss,
+                optimizer: torch.optim,
+                data_loader: DataLoader) -> tuple[float, float]:
+    """
+    Trains the model for one epoch.
 
-# Load MNIST dataset #
-full_train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=ToTensor())
-test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=ToTensor())
+    Args:
+        model (nn.Module): The neural network model.
+        criterion (nn.modules.loss._Loss): The loss function.
+        optimizer (torch.optim.Optimizer): The optimizer used to update model parameters.
+        data_loader (DataLoader): DataLoader for training data.
 
-# Split into training (80%) and validation (20%)
-train_dataset, val_dataset = random_split(full_train_dataset,
-                                        [1-validation_split, validation_split])
-
-# Create DataLoader for training, validation and test datasets.
-train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
-val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
-test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
-
-# Instantiate the model
-model = SimpleCNN(num_classes=num_class).to(device)
-
-# Loss & Optimization #
-criterion = nn.CrossEntropyLoss().to(device)
-optimizer = optim.Adam(model.parameters(), lr=learning_rate)
-
-
-train_loss = []
-validation_loss = []
-
-# Train & Validation #
-for epoch in range(num_epochs):
+    Returns:
+        tuple[float, float]: Tuple containing training accuracy (%) and average training loss.
+    """
     model.train()  # training mode
     correct_train, total_train, total_train_loss = 0, 0, 0
 
-    for inputs, labels in train_loader:
+    for inputs, labels in data_loader:
         inputs, labels = inputs.to(device), labels.to(device)
 
-        optimizer.zero_grad()               # Reset gradients
-        outputs = model(inputs)             # Forward pass
-        loss = criterion(outputs, labels)   # Compute loss
-        loss.backward()                     # Backpropagation
-        optimizer.step()                    # Update parameters
+        optimizer.zero_grad()  # Reset gradients
+        outputs = model(inputs)  # Forward pass
+        loss = criterion(outputs, labels)  # Compute loss
+        loss.backward()  # Backpropagation
+        optimizer.step()  # Update parameters
 
         # Training accuracy calculation
         total_train_loss += loss.item()
@@ -131,66 +157,142 @@ for epoch in range(num_epochs):
         correct_train += predicted.eq(labels).sum().item()
         total_train += labels.size(0)
 
-    train_accuracy = 100 * correct_train / total_train
-    train_loss.append(total_train_loss / len(train_loader))
+    epoch_accuracy = 100 * correct_train / total_train
+    epoch_loss = total_train_loss / len(data_loader)
 
-    # Validation
+    return epoch_accuracy, epoch_loss
+
+
+def evaluate_model(model: nn.Module,
+                   criterion: nn.modules.loss,
+                   data_loader: DataLoader) -> tuple[float, float]:
+    """
+    Evaluates the model on a validation or test set.
+
+    Args:
+        model (nn.Module): The neural network model.
+        criterion (nn.modules.loss._Loss): The loss function.
+        data_loader (DataLoader): DataLoader for validation/test data.
+
+    Returns:
+        tuple[float, float]: Tuple containing evaluation accuracy (%) and average loss.
+    """
     model.eval()  # Set to evaluation mode
-    total_val_loss, correct_val, total_val = 0, 0, 0
+    total_eval_loss, correct_eval, total_eval = 0, 0, 0
 
     with torch.no_grad():
-        for inputs, labels in val_loader:
+        for inputs, labels in data_loader:
             inputs, labels = inputs.to(device), labels.to(device)
             outputs = model(inputs)
             loss = criterion(outputs, labels)
 
-            # Validation accuracy calculation
-            total_val_loss += loss.item()
+            # Accuracy calculation
+            total_eval_loss += loss.item()
             _, predicted = outputs.max(1)
-            correct_val += predicted.eq(labels).sum().item()
-            total_val += labels.size(0)
+            correct_eval += predicted.eq(labels).sum().item()
+            total_eval += labels.size(0)
 
-    val_accuracy = 100 * correct_val / total_val
-    validation_loss.append(total_val_loss / len(val_loader))
+    eval_accuracy = 100 * correct_eval / total_eval
+    eval_loss = total_eval_loss / len(data_loader)
 
-    print(f"Epoch {epoch + 1}: "
-          f"Train Loss: {train_loss[epoch]:.4f}, Train Accuracy: {train_accuracy:.2f}% | "
-          f"Validation Loss: {validation_loss[epoch]:.4f}, Validation Accuracy: {val_accuracy:.2f}%")
+    return eval_accuracy, eval_loss
 
 
-# Test #
-model.eval()
-correct_test = 0
-total_test = 0
+def train_model(model: nn.Module,
+                criterion: nn.modules.loss,
+                optimizer: torch.optim,
+                training_loader: DataLoader,
+                validation_loader: DataLoader
+                ) -> tuple[list[float], list[float]]:
+    """
+    Trains the CNN model over multiple epochs using training and validation data.
 
-with torch.no_grad():
-    for inputs, labels in test_loader:
-        inputs, labels = inputs.to(device), labels.to(device)
+    Args:
+        model (nn.Module): The CNN model to train.
+        criterion (nn.modules.loss._Loss): Loss function (e.g., CrossEntropyLoss).
+        optimizer (torch.optim.Optimizer): Optimizer for updating model weights.
+        training_loader (DataLoader): DataLoader providing training data.
+        validation_loader (DataLoader): DataLoader providing validation data.
 
-        outputs = model(inputs)
-        loss = criterion(outputs, labels)
-    
-        # test accuracy calculation
-        _, predicted = outputs.max(1)
-        correct_test += predicted.eq(labels).sum().item()
-        total_test += labels.size(0)
+    Returns:
+        tuple[list[float], list[float]]: Lists of training and validation losses per epoch.
+    """
+    train_loss = []
+    validation_loss = []
 
-test_accuracy = 100 * correct_test / total_test
-print(f"\nTest Accuracy: {test_accuracy:.2f}%")
+    for epoch in range(num_epochs):
+        train_accuracy, epoch_train_loss = train_epoch(model, criterion, optimizer, training_loader)
+        train_loss.append(epoch_train_loss)
+
+        validation_accuracy, epoch_validation_loss = evaluate_model(model, criterion, validation_loader)
+        validation_loss.append(epoch_validation_loss)
+
+        print(f"Epoch {epoch + 1}: "
+              f"Train Loss: {train_loss[epoch]:.4f}, Train Accuracy: {train_accuracy:.2f}% | "
+              f"Validation Loss: {validation_loss[epoch]:.4f}, Validation Accuracy: {validation_accuracy:.2f}%")
+
+    return train_loss, validation_loss
 
 
-# Plot Loss #
-eps = range(1, len(train_loss) + 1)
+#-------------- Visualization -------------------#
+def plot_training_losses(train_loss_epochs: list[float],
+                         validation_loss_epochs: list[float]):
+    """
+    Plots training and validation loss over epochs.
 
-plt.figure(figsize=(10, 5))
-plt.plot(eps, train_loss, linestyle='-', color='#1f77b4', label='Train Loss', linewidth=2)
-plt.plot(eps, validation_loss, linestyle='-', color='#d62728', label='Validation Loss', linewidth=2)
+    Args:
+        train_loss_epochs (list[float]): List of training loss values per epoch.
+        validation_loss_epochs (list[float]): List of validation loss values per epoch.
+    """
+    eps = range(1, len(train_loss_epochs) + 1)
 
-plt.title("Training & Validation Loss Over Epochs", fontsize=16, fontweight='bold')
-plt.xticks(eps) # This ensures that xticks are integers
-plt.xlabel("Epoch", fontsize=12)
-plt.ylabel("Loss", fontsize=12)
-plt.legend()
-plt.grid(True, linestyle='--', alpha=0.6)
+    plt.figure(figsize=(10, 5))
+    plt.plot(eps, train_loss_epochs, linestyle='-', color='#1f77b4', label='Train Loss', linewidth=2)
+    plt.plot(eps, validation_loss_epochs, linestyle='-', color='#d62728', label='Validation Loss', linewidth=2)
 
-plt.show()
+    plt.title("Training & Validation Loss Over Epochs", fontsize=16, fontweight='bold')
+    plt.xticks(eps)  # This ensures that xticks are integers
+    plt.xlabel("Epoch", fontsize=12)
+    plt.ylabel("Loss", fontsize=12)
+    plt.legend()
+    plt.grid(True, linestyle='--', alpha=0.6)
+
+    plt.show()
+
+
+# Set device
+device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
+print('Using', device, '\n')
+
+#----------------- Data Loading -----------------#
+# Load MNIST dataset
+full_train_dataset = datasets.MNIST(root='./data', train=True, download=True, transform=ToTensor())
+test_dataset = datasets.MNIST(root='./data', train=False, download=True, transform=ToTensor())
+
+# Split into training (80%) and validation (20%)
+train_dataset, val_dataset = random_split(full_train_dataset,
+                                          [1 - validation_split, validation_split])
+
+# Create DataLoader for training, validation and test datasets.
+train_loader = DataLoader(train_dataset, batch_size=batch_size, shuffle=True)
+val_loader = DataLoader(val_dataset, batch_size=batch_size, shuffle=False)
+test_loader = DataLoader(test_dataset, batch_size=batch_size, shuffle=False)
+
+#----------------- Model Setup -----------------#
+# Instantiate the model
+cnn_model = SimpleCNN(num_classes=num_class).to(device)
+
+# Loss & Optimization
+loss_fn = nn.CrossEntropyLoss().to(device)
+adam_optimizer = optim.Adam(cnn_model.parameters(), lr=learning_rate)
+
+#------------------ Main Entry ------------------#
+if __name__ == "__main__":
+    # Train & Validation
+    train_losses, validation_losses = train_model(cnn_model, loss_fn, adam_optimizer,
+                                                  train_loader, val_loader)
+    # Test
+    test_accuracy, test_loss = evaluate_model(cnn_model, loss_fn, test_loader)
+    print(f"\nTest Loss: {test_loss:.4f},Test Accuracy: {test_accuracy:.2f}%")
+    # Plot Loss
+    plot_training_losses(train_losses, validation_losses)
