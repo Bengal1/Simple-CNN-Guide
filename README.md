@@ -160,7 +160,6 @@ There are multiple kinds of layers, methods and function that can be used from t
 * [**BatchNorm2d**](https://pytorch.org/docs/stable/generated/torch.nn.BatchNorm2d.html) - Applies Batch Normalization over a 4D input, sclicing through *C* (channel dimesion) and computing mean ($`\mu`$) and variance ($`\sigma^2`$) on *(N,H,W)* slice. Using that statistics normalizing each slice.
 
 ### Defining the Model
-
 ```ruby
 
 class SimpleCNN(nn.Module):
@@ -221,7 +220,7 @@ class SimpleCNN(nn.Module):
         optimizer.step()
 ```
 
-### Train
+### Simple CNN Training Pipeline
 ```ruby
 # Initialize model, loss function and optimizer
 cnn_model, loss_fn, adam_optimizer, h_device = _setup_model_for_training(num_class,learning_rate)
