@@ -221,6 +221,25 @@ class SimpleCNN(nn.Module):
         optimizer.step()
 ```
 
+### Train
+```ruby
+# Initialize model, loss function and optimizer
+cnn_model, loss_fn, adam_optimizer, h_device = _setup_model_for_training(num_class,learning_rate)
+
+# Initialize MNIST data loaders
+train_loader, val_loader, test_loader = get_mnist_dataloaders(batch_size, validation_split)
+
+# Train & Validation
+train_losses, validation_losses = train_model(cnn_model, loss_fn, adam_optimizer, train_loader, val_loader, h_device)
+
+# Test
+test_accuracy, test_loss = evaluate_model(cnn_model, loss_fn, test_loader, h_device)
+print(f"\nTest Loss: {test_loss:.4f},Test Accuracy: {test_accuracy:.2f}%")
+
+# Plot Loss
+plot_training_losses(train_losses, validation_losses)
+```
+
 ### *Loss & Optimization*
 * [**Cross Enthropy Loss**](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) - This criterion computes the cross entropy loss between input logits and target. Loss function is a function that maps an event or values of one or more variables onto a real number intuitively representing some "loss" associated with the event. The Cross Enthropy Loss function is commonly used in classification tasks both in traditional ML and deep learning, and it also has its advantages. For more information on [Loss function](https://en.wikipedia.org/wiki/Loss_function) and [Cross Enthropy Loss function](https://wandb.ai/sauravmaheshkar/cross-entropy/reports/What-Is-Cross-Entropy-Loss-A-Tutorial-With-Code--VmlldzoxMDA5NTMx). 
 
