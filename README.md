@@ -223,7 +223,7 @@ class SimpleCNN(nn.Module):
 ### Training Pipeline
 ```ruby
 # Initialize model, loss function and optimizer
-cnn_model, loss_fn, adam_optimizer, h_device = _setup_model_for_training(num_class,learning_rate)
+cnn_model, loss_fn, adam_optimizer, h_device = _setup_model_for_training(num_class, learning_rate)
 
 # Initialize MNIST data loaders
 train_loader, val_loader, test_loader = get_mnist_dataloaders(batch_size, validation_split)
