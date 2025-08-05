@@ -174,7 +174,7 @@ class SimpleCNN(nn.Module):
     - Regularization:
         - 2 Dropout.
         - 2 Batch Normalization. 
-    - No explicit Softmax (applies by nn.CrossEntropyLoss).
+    - Note: No explicit Softmax (applies by nn.CrossEntropyLoss).
     """
 
     def __init__(self, num_classes = 10):
