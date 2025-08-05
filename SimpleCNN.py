@@ -12,10 +12,8 @@ Architecture:
 - Dropout layers for regularization
 - Two fully connected layers
 - Trained using CrossEntropyLoss and Adam optimizer
-
-Author:
-    Bengal1
 """
+__author__="Bengal1"
 
 import torch
 import torch.nn as nn
