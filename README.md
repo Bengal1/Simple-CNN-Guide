@@ -168,10 +168,12 @@ class SimpleCNN(nn.Module):
     A simple Convolutional Neural Network (CNN) for MNIST classification.
 
     Architecture:
-    - 2 Convolutional layers with ReLU and Batch Normalization
-    - 2 Max Pooling layers
-    - 2 Dropout for regularization
-    - 2 Fully Connected (FC) layers
+    - 2 Convolutional layers with ReLU and Batch Normalization.
+    - 2 Max Pooling layers.
+    - 2 Fully Connected (FC) layers.
+    - Regularization:
+        - 2 Dropout.
+        - 2 Batch Normalization. 
     - No explicit Softmax (applies by nn.CrossEntropyLoss)
     """
 
