@@ -314,13 +314,13 @@ def plot_training_losses(train_loss_epochs: list[float],
         validation_loss_epochs (list[float]): List of validation loss values per epoch.
     """
     eps = range(1, len(train_loss_epochs) + 1)
-
+    # --- Plotting Configuration ---
     plt.figure(figsize=(10, 5))
     plt.plot(eps, train_loss_epochs, linestyle='-', color='#1f77b4',
              label='Train Loss', linewidth=2)
     plt.plot(eps, validation_loss_epochs, linestyle='-', color='#d62728',
              label='Validation Loss', linewidth=2)
-
+    # --- Chart Customization ---
     plt.title("Training & Validation Loss Over Epochs", fontsize=16,
               fontweight='bold')
     plt.xticks(eps)  # This ensures that xticks are integers
@@ -328,7 +328,7 @@ def plot_training_losses(train_loss_epochs: list[float],
     plt.ylabel("Loss", fontsize=12)
     plt.legend()
     plt.grid(True, linestyle='--', alpha=0.6)
-
+    # --- Display Plot ---
     plt.show()
 
 
