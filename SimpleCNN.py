@@ -9,15 +9,22 @@
 SimpleCNN - MNIST Classifier
 ============================
 
-This script defines and trains a simple Convolutional Neural Network (CNN) on the MNIST digit dataset.
-It includes a clean training pipeline, evaluation routines, and plotting functionality for loss trends.
+This script defines and trains a simple Convolutional Neural Network (CNN) on the
+MNIST digit dataset. It includes a clean training pipeline, evaluation routines,
+and plotting functionality for loss trends.
 
 Architecture:
-- Two convolutional layers with ReLU and batch normalization
-- Max pooling layers
-- Dropout layers for regularization
-- Two fully connected layers
-- Trained using CrossEntropyLoss and Adam optimizer
+- 2 Convolutional layers with ReLU.
+- 2 Max pooling layers.
+- 2 Fully connected layers.
+- Regularization:
+    - 2 Dropout.
+    - 2 Batch Normalization.
+
+Training Details:
+- Loss Function: Cross-Entropy Loss is used to compute the loss between predicted
+                logits and true labels.
+- Optimizer: The Adam Optimizer is used to update the model's weights during training.
 """
 __author__="Bengal1"
 
