@@ -154,6 +154,7 @@ def _setup_model_for_training(
             - The initialized SimpleCNN model.
             - The configured loss function (CrossEntropyLoss).
             - The initialized Adam optimizer.
+            - The device (CPU or GPU).
     """
     # Set device (GPU/CPU)
     device = torch.device('cuda' if torch.cuda.is_available() else 'cpu')
