@@ -245,6 +245,7 @@ plot_training_losses(train_losses, validation_losses)
 * [**Adam optimizer**](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) - The Adam optimization algorithm is an extension to stochastic gradient descent (SGD). Unlike SGD, The method computes individual adaptive learning rates for different parameters from estimates of first and second moments of the gradients. For more information on [Stochastic gradient descent, extensions and variants](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
 
 ## Evaluation
+The model performances are evaluated mainly by the *Loss*. Loss is the key measure of how far predictions deviate from the target, driving the optimization process to adjust model parameters and minimize this error. Training loss reflects performance on the data used for learning, while validation loss measures performance on unseen data to assess generalization; a widening gap between them often indicates overfitting.
 
 ### Training & Validation Loss
 
