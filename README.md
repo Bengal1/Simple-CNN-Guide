@@ -246,7 +246,7 @@ plot_training_losses(train_losses, validation_losses)
 
 ## Evaluation
 
-### Train & Validation Loss
+### Training & Validation Loss
 
 <img src="https://github.com/user-attachments/assets/6fbfc75a-2867-472c-b634-2f01e7c4f62d" align="center" width="1000"/>
 
