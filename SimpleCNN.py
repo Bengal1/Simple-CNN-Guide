@@ -385,6 +385,6 @@ if __name__ == "__main__":
     # Test
     test_accuracy, test_loss = evaluate_model(cnn_model, loss_fn,
                                               test_loader, h_device)
-    print(f"\nTest Loss: {test_loss:.4f},Test Accuracy: {test_accuracy:.2f}%")
+    print(f"\nTest Loss: {test_loss:.4f}, Test Accuracy: {test_accuracy:.2f}%")
     # Plot Loss
     plot_training_losses(train_losses, validation_losses)
