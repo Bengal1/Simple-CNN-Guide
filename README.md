@@ -249,13 +249,11 @@ The model performances are evaluated mainly by the *Loss*. Loss is the key measu
 
 ### Training & Validation Loss
 
-<img src="https://github.com/user-attachments/assets/6fbfc75a-2867-472c-b634-2f01e7c4f62d" align="center" width="1000"/>
-
+<img width="2560" height="1335" alt="cnn4_g" src="https://github.com/user-attachments/assets/80137e24-bf7c-4785-b005-58216dd8c6db" />
 
 ### Typical Run
 
-<img src="https://github.com/user-attachments/assets/a6905cbb-3dd7-4120-acf3-e20d00cbc605" align="center" width="1000"/>
-
+<img width="905" height="376" alt="cnn4_p" src="https://github.com/user-attachments/assets/4b4830a1-7e89-4705-9c33-2ac8d7b904b6" />
 
 ## References
 [The Back Propagation Method for CNN](https://ieeexplore.ieee.org/abstract/document/409626)
