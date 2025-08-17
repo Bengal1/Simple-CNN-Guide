@@ -6,7 +6,7 @@
 # ----------------------------------------------------------------------
 """
 ============================
-SimpleCNN - MNIST Classifier
+         Simple CNN
 ============================
 
 This script defines and trains a simple Convolutional Neural Network (CNN) on the
