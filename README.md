@@ -1,4 +1,10 @@
 # SimpleCNN Guide
+This repository provides a guide for building [*Convolutional Neural Network (CNN)*](https://en.wikipedia.org/wiki/Convolutional_neural_network) in PyTorch, aimed at beginners who want to understand how CNNs work and how to implement them. It combines theoretical explanations of key concepts from [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning), such as the network architecture, Cross-Entropy Loss, and the Adam optimizer, with code examples that show how these components come together in practice.
+
+CNNs are widely used in Computer Vision tasks, such as image classification, object detection, and image generation. 
+
+This repository is built for learning purposes and helps beginners get started with coding neural networks and understanding their key components.
+
 This is a practical guide for building [*Convolutional Neural Network (CNN)*](https://en.wikipedia.org/wiki/Convolutional_neural_network), and it applies to beginners who like to know how to start building a CNN with *Pytorch*.
 In this guide I will explain the steps to write code for basic CNN, with link to relevant to topics. The reader should have basic knowledge of [Deep Learning](https://en.wikipedia.org/wiki/Deep_learning) for him to use it. 
 
