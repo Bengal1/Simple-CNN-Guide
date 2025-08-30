@@ -16,7 +16,7 @@ The network in this guide is a 6 layers network contains: 2 convolution layers, 
 ### Layers
 In *Convolutional Neural Network* there are several types of layers, we will discuss the types that are relevant to our SimpleCNN model.
 #### Fully-Connected Layer
-<img align="right" height="300" alt="fc_cnn" src="https://github.com/user-attachments/assets/87a73de1-a468-465a-870c-619302bfb861" />
+<img align="right" height="300" alt="fc_cnn" src="https://github.com/user-attachments/assets/6c781d04-a4da-4fb7-b854-7b5183e22040" />
 The Fully Connected (FC) layer consists of the weights and biases. Every member of the output layer is connected through the weights to every member of the input layer.
 
 (In the image you can see the input layer in blue, the output layer in red and the arcs that connects them are the weights)
