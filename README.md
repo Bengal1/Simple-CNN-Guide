@@ -31,7 +31,7 @@ y_{j} = h \bigg( \sum_{i=1}^n w_{ji} x_i + w_{j0} \bigg)
 A network consisting solely of *Fully-Connected Layers* is called [*Multilayer perceptron*](https://en.wikipedia.org/wiki/Multilayer_perceptron).
 
 #### Convolutional Layer
-<img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/949de912-716e-438c-9a41-c864ba930128" align="right" height="300"/>
+<img align="right" height="300" alt="conv_cnn" src="https://github.com/user-attachments/assets/916d2f0c-c225-44b1-88e3-292e53219f4f" />
 
 The convolutional layer is considered an essential block of the *CNN*. The convolutional layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is portion of the layer's input.
 The parameters to optimize are the kernels (filters). <br/>
@@ -59,8 +59,7 @@ H_{out} = \left\lfloor\frac{H_{in} - h_{kernel} + 2 \cdot padding}{stride}\right
 W_{out} = \left\lfloor\frac{W_{in} - w_{kernel} + 2 \cdot padding}{stride}\right\rfloor + 1
 ```
 <br/>
-<img src="https://github.com/user-attachments/assets/32f652b8-78be-4726-9a85-94fcd25af58f" align="center"/>
-
+<img align="center" width="2455" height="916" alt="pooling" src="https://github.com/user-attachments/assets/98c04a7f-16ab-4017-a5c7-76d2090ba686" />
 
 ### Activation Function
 The Neural Network is a tool that perform estimation, when the activation function is non-linear, then a two-layer neural network can be proven to be a universal function approximator ([Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem)).
@@ -102,7 +101,7 @@ where $`γ`$ and $`β`$ are learned scale and shift parameters. This stabilizes 
 
 --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 ### Optimization
-<img src="https://github.com/Bengal1/Simple-CNN-Guide/assets/34989887/13b401b9-54c8-4f4c-8588-441385342c6c" align="right" height="200"/>
+<img align="right" height="200" alt="optimization" src="https://github.com/user-attachments/assets/dcd5cca0-916a-4ac6-b26b-c488229cc06b" />
 
 
 Mathematical optimization is the selection of a best element, with regard to some criterion, from some set of available alternatives. Optimization problem is the problem of finding the best solution from all feasible solutions. Optimization problems can be divided into two categories, with continuous variables or discrete. In our case to solve the optimization problem we use *Gradient Descent algorithm* (or its variant), in order to to find the best parameters (in every layer) that minimizes the loss. In order for us to perform the algorithm, the *Loss function* needs to be [*Differentiable*](https://en.wikipedia.org/wiki/Differentiable_function), with a differentiable loss function we calculate the [*Gradient*](https://en.wikipedia.org/wiki/Gradient) in order to find the minimum point "direction", and then we take a step towards that minimum point. *Gradient Descent* is first-oder iterative algorithm. With an arbitrary starting point we will calculate the the the gradient and correct the parameters, duruing *Backpropagation* (Backward-pass), so that the corrected parameters will bring us to a lower value of loss up to convergence to the minimum point (local) of the loss function. The step size is adjust by the *Learning Rate*. Under certain conditions that are met with the selection of a known and common loss function, convergence of the algorithm to at least a local minimum point is guaranteed. 
@@ -145,6 +144,7 @@ Our Model is consist of 6 layers:
 6. Fully-connected Layer with input layer of 512 and output layer of 10 (classes) and [Softmax](https://en.wikipedia.org/wiki/Softmax_function) activation function.
 
 ![simpleCNN](https://user-images.githubusercontent.com/34989887/206905433-34b42cbf-3ce3-4703-a575-d48f2cc95c09.png)
+<img width="3967" height="1296" alt="simpleCNNarchitecture" src="https://github.com/user-attachments/assets/a4b94761-60a1-4a42-a476-c9fd0642e526" />
 
 The Simple CNN also use methods to accelerate and stablize the convergence of the network training, and avoid overfitting. 
 After the second layer and fourth layer (Max-pool) the Simple CNN applies [*Dropout*](https://en.wikipedia.org/wiki/Dilution_(neural_networks)), and after the first layer and the third layer (Convolution) it applies [*Batch-Normalization*](https://en.wikipedia.org/wiki/Batch_normalization), before the activation.
