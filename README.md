@@ -143,7 +143,6 @@ Our Model is consist of 6 layers:
 5. Fully-connected Layer with input layer of 1024 and output layer of 512 and ReLU activation function.
 6. Fully-connected Layer with input layer of 512 and output layer of 10 (classes) and [Softmax](https://en.wikipedia.org/wiki/Softmax_function) activation function.
 
-![simpleCNN](https://user-images.githubusercontent.com/34989887/206905433-34b42cbf-3ce3-4703-a575-d48f2cc95c09.png)
 <img width="3967" height="1296" alt="simpleCNNarchitecture" src="https://github.com/user-attachments/assets/a4b94761-60a1-4a42-a476-c9fd0642e526" />
 
 The Simple CNN also use methods to accelerate and stablize the convergence of the network training, and avoid overfitting. 
