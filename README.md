@@ -139,14 +139,14 @@ Then we scale ($`γ`$) and shift ($`β`$):
 where $`γ`$ and $`β`$ are learned scale and shift parameters. This stabilizes and speeds up training and adds a bit of regularization through batch noise.
 
 
-## The Database
+## The Dataset
 MNIST is a classic dataset of handwritten digits that’s become the “hello world” of computer vision and machine learning. By providing a simple, standardized set of images paired with labels, it lets newcomers and experts alike quickly prototype and benchmark classification algorithms, explore feature learning, and compare new techniques against a familiar baseline.
-### *MNIST Database*
-This network is trained on MNIST database, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
+### *MNIST Dataset*
+This network is trained on MNIST Dataset, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
 
 <img src="https://user-images.githubusercontent.com/34989887/204675687-03f39aeb-1039-4abc-aec5-7f1d6cbbe52e.png" width="350" height="350"/>
 
-The MNIST database has 70,000 images, such that the training dataset is 60,000 images and the test dataset is 10,000 images.
+The MNIST Dataset has 70,000 images, such that the training dataset is 60,000 images and the test dataset is 10,000 images.
 For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database)
 
 ## The *Simple CNN* Model
