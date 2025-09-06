@@ -92,6 +92,8 @@ Gradient descent is a first-order iterative optimization algorithm that uses the
 
 In the forward pass, the input propagates through the network to produce an output and compute the loss. In the backward pass (backpropagation), this loss is propagated backward through the network to determine how much each parameter contributed to the error. Using the chain rule, the gradients of the loss with respect to all weights and biases are calculated layer by layer. These gradients indicate how the parameters should change to reduce the loss. The Gradient Descent algorithm then updates the parameters in the opposite direction of the gradients. Repeating this cycle gradually improves the model by minimizing the loss function.
 
+[3Blue1Brown](https://www.youtube.com/watch?v=Ilg3gGewQ5U) offers a clear and intuitive visualization of backpropagation.
+
 The parameter update rule for the $i-th$ parameter at iteration $t + 1$ is:
 
 ```math
