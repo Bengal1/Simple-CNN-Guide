@@ -261,7 +261,7 @@ plot_training_losses(train_losses, validation_losses)
 
 ### *Loss & Optimization*
 #### Cross Entropy Loss Function
-[**Cross Entropy Loss**](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) is widely used for classification tasks, as it measures the difference between the predicted probability distribution and the true distribution. Given a predicted probability vector **$p$** and a one-hot encoded target vector **$y$**, the loss for a single example is defined as:
+[**Cross Entropy Loss**](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) is widely used for classification tasks, as it measures the difference between the predicted probability distribution and the true distribution. Given a predicted probability vector **$\hat{y}$** and a one-hot encoded target vector **$y$**, the loss for a single example is defined as:
 
 $$
 \mathcal{L}_{CE} = - \sum_{i} y_i \log \hat{y}_i
