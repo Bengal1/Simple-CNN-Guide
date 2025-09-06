@@ -74,7 +74,9 @@ Common examples of activation functions:
 
 
 ### Loss & Loss function
-The Loss represent the difference between the output of the network and the desired output according to established criterion. In mathematical optimization and decision theory, a [*Loss function*](https://en.wikipedia.org/wiki/Loss_function) is a function that maps an event or values of one or more variables onto a real number intuitively representing some "cost" associated with the even.
+The loss measures the discrepancy between the predicted output of a model and the true target output according to a chosen criterion. It quantifies how well the model performs on a single example, reflecting the “error” or “cost” associated with that prediction. A loss function is a mathematical formulation that maps predictions and true targets to a single real number representing this cost. It serves as a guiding signal for learning, indicating how the model parameters should be updated to minimize the loss.
+
+Loss functions are task-specific measures of the discrepancy between predicted and true outputs. For example, regression tasks often use Mean Squared Error (MSE) or Mean Absolute Error (MAE), while classification tasks commonly use Cross-Entropy or Hinge Loss. They can also encode penalties for particular mistakes, such as misclassifying certain classes or emphasizing outliers. Minimizing the loss over the dataset forms the optimization objective in machine learning and provides the signal used to compute gradients and update model parameters during training.
 
 Common examples of loss functions:
 * Mean Squared Error (MSE) - $`MSE = \frac{1}{N} \sum_{i=0} (y_i - t_i)^2`$
