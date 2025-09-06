@@ -62,8 +62,7 @@ W_{out} = \left\lfloor\frac{W_{in} - w_{kernel} + 2 \cdot padding}{stride}\right
 <img align="center" width="2455" height="916" alt="pooling" src="https://github.com/user-attachments/assets/98c04a7f-16ab-4017-a5c7-76d2090ba686" />
 
 ### Activation Function
-The Neural Network is a tool that perform estimation, when the activation function is non-linear, then a two-layer neural network can be proven to be a universal function approximator ([Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem)).
-In order to make the Neural Network perform better we use non-linear activation function on top of the Fully-connected layers and the Convolutional layers (Convolution is a linear operator).
+A neural network is a model used for function approximation and estimation. When non-linear activation functions are applied, even a simple two-layer network can approximate any continuous function, as stated by the [Universal approximation theorem](https://en.wikipedia.org/wiki/Universal_approximation_theorem). To enhance the expressive power of neural networks, non-linear activation functions are applied after fully connected layers and convolutional layers, since convolution itself is a linear operation. These activations introduce non-linearity, enabling the network to capture complex patterns in the data.
 
 Common examples of activation functions:
 * Sigmoid - $`\sigma(x) = {1 \over {1+e^{-x}}}`$
