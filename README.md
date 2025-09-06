@@ -31,12 +31,11 @@ A network consisting solely of *Fully-Connected Layers* is called [*Multilayer p
 #### Convolutional Layer
 <img align="right" height="300" alt="conv_cnn" src="https://github.com/user-attachments/assets/916d2f0c-c225-44b1-88e3-292e53219f4f" />
 
-The convolutional layer is considered an essential block of the *CNN*. The convolutional layer performs a dot product between two matrices, where one matrix is the set of learnable parameters otherwise known as a kernel, and the other matrix is portion of the layer's input.
-The parameters to optimize are the kernels (filters). <br/>
+The convolutional layer is a fundamental building block of a CNN. It performs a dot product between two matrices: one is the kernel (or filter), which contains learnable parameters, and the other is a portion of the layer’s input. The parameters to optimize in this layer are the kernels themselves.
 
-For a better understanding of the convolution idea, there is a helpful video of [3Blue1Brown](https://www.youtube.com/watch?v=KuXjwB4LzSA). <br/>
+For a more intuitive explanation of convolution, the [3Blue1Brown](https://www.youtube.com/watch?v=KuXjwB4LzSA) provides an excellent visual guide.
 
-In a forward-pass, the filter go through the input in the form of scanning according to its specifications ([stride](https://deepai.org/machine-learning-glossary-and-terms/stride), [padding](https://deepai.org/machine-learning-glossary-and-terms/padding) etc.), and for every filter stop a convolution (cross-correlation) operation is performed on the corresponding portion of the input to build one output value (As you can see in the image on the side). In the case of multi-channel input, for every filter all channel goes through the process and combined in the end.
+During a forward pass, each filter scans the input according to its specifications ([stride](https://deepai.org/machine-learning-glossary-and-terms/stride), [padding](https://deepai.org/machine-learning-glossary-and-terms/padding) etc.). At each position, a convolution (cross-correlation) operation is applied to the corresponding portion of the input to produce a single output value (as illustrated in the image). For multi-channel inputs, the operation is applied across all channels of the input, and the results are summed to produce the final output of the filter.
 
 The size of the output can be calculated as follows:
 
