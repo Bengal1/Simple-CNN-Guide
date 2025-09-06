@@ -9,9 +9,9 @@ This repository is built for learning purposes and helps beginners get started w
 - [![PyTorch](https://img.shields.io/badge/PyTorch-Deep%20Learning-EE4C2C?logo=pytorch&logoColor=white)](https://pytorch.org/) <br/>
 
 ## Convolutional Neural Network (CNN)
-In this section we will briefly go through CNN properties and components. *CNN* is type of Feed-Forward Network which learns to perform tasks like classification, the CNN does it through feature (parameters) optimization. with a given input we will perform a *Forward-pass* (Forward propagation), calculation and storage of intermediate variables, in forward-pass each layer performs its actions according to its type and the relevant inner variables are stored. the loss will of the network will be calculated according to the criterion, chosen *Loss function*. Then we will perform [*Backpropagation*](https://en.wikipedia.org/wiki/Backpropagation), a process designed to correct the parameters of each layer, using [*Grdient Descent Algorithm*](https://en.wikipedia.org/wiki/Gradient_descent) in order to find the minimum (local) of the *Loss function*.
+A Convolutional Neural Network (CNN) is a type of feed-forward network that learns to perform tasks such as classification by optimizing its parameters (features). For each input, the network performs a forward pass, computing the outputs of each layer and storing intermediate activations. The loss is then calculated using the chosen loss function. During [*Backpropagation*](https://en.wikipedia.org/wiki/Backpropagation), the network updates its parameters using a gradient descent algorithm, moving toward a (local) minimum of the loss.
 
-The network in this guide is a 6 layers network contains: 2 convolution layers, 2 pooling layers and 2 fully-connected layers. The network also applies dropout and batch-normalization methods. For reference the network will be called "Simple CNN".
+The network in this guide, referred to as the “Simple CNN”, consists of 6 layers: 2 convolutional layers, 2 pooling layers, and 2 fully-connected layers. It also employs dropout and batch normalization to improve generalization and training stability.
 
 ### Layers
 In *Convolutional Neural Network* there are several types of layers, we will discuss the types that are relevant to our SimpleCNN model.
