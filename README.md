@@ -127,6 +127,8 @@ $$
 \tilde{h_i} = \begin{cases}0 & \; & with & probability & p  \\\ \frac{h_i}{1-p} & \; & with & probability & 1-p\end{cases}
 $$
 
+During inference, all units are used as-is: $$\tilde{h_i} = h_i$$
+
 ***Batch Normalization*** aims to stabilize and accelerate training by ensuring each channel’s activations have consistent statistics across mini‑batches. This method normalizes each feature channel’s activations to zero mean and unit variance over a mini-batch thereby It reduces internal covariate shift and can have a slight regularizing effect (due to batch noise). <br/> 
 For a layer’s inputs $`x`$, we compute per‑channel mean, $`μ`$, and variance, $`σ^2`$, then transform: <br/>
 ```math
