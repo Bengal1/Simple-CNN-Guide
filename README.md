@@ -73,7 +73,7 @@ Common examples of activation functions:
 * Softmax - $`Softmax(x)_{i} = \frac{e^{x_i}}{\sum_{j=0} e^{x_j}}`$
 
 
-### Loss & Loss function
+## Loss & Loss function
 The loss measures the discrepancy between the predicted output of a model and the true target output according to a chosen criterion. It quantifies how well the model performs on a single example, reflecting the “error” or “cost” associated with that prediction. A loss function is a mathematical formulation that maps predictions and true targets to a single real number representing this cost. It serves as a guiding signal for learning, indicating how the model parameters should be updated to minimize the loss.
 
 Loss functions are task-specific measures of the discrepancy between predicted and true outputs. For example, regression tasks often use Mean Squared Error (MSE) or Mean Absolute Error (MAE), while classification tasks commonly use Cross-Entropy or Hinge Loss. They can also encode penalties for particular mistakes, such as misclassifying certain classes or emphasizing outliers. Minimizing the loss over the dataset forms the optimization objective in machine learning and provides the signal used to compute gradients and update model parameters during training.
@@ -84,22 +84,6 @@ Common examples of loss functions:
 * Mean Bias Error - $`MBE = \frac{\sum_{i=0} (y_i - t_i)}{N}`$
 * Hinge (SVM) - $`H_i = \sum_{j\neq y_i} max(0, s_j - s_{y_j}+1)`$
 * Cross-Entropy - $`CE = -\frac{1}{N} \sum_{i=0} y_i*\log{t_i}`$
-
-### Regularization
-Regularization aims to reduce overfitting by improving generalization to unseen data. In our model, Simple CNN, we use *Dropout* and *Batch Normalization* methods.<br/>
-
-***Dropout*** is a regularization technique where, during training, a fixed percentage of neurons (e.g. 50%) are randomly set to zero in each forward pass, preventing co-adaptation of neurons. This prevents over-reliance on specific neurons and encourages redundancy and robustness. <br/> At inference time, all neurons are active, and their outputs are scaled to match the expected value during training. <br/>
-
-***Batch Normalization*** aims to stabilize and accelerate training by ensuring each channel’s activations have consistent statistics across mini‑batches. This method normalizes each feature channel’s activations to zero mean and unit variance over a mini-batch thereby It reduces internal covariate shift and can have a slight regularizing effect (due to batch noise). <br/> 
-For a layer’s inputs $`x`$, we compute per‑channel mean, $`μ`$, and variance, $`σ^2`$, then transform: <br/>
-```math
-\hat{x} = \frac{(x - μ)}{\sqrt{σ^{2} + ε}}
-```
-Then we scale ($`γ`$) and shift ($`β`$):
-```math
-⇨  y = γ·\hat{x} + β
-```
-where $`γ`$ and $`β`$ are learned scale and shift parameters. This stabilizes and speeds up training and adds a bit of regularization through batch noise.
 
 ## Optimization
 <img align="right" height="250" alt="optimization" src="https://github.com/user-attachments/assets/dcd5cca0-916a-4ac6-b26b-c488229cc06b" />
@@ -131,6 +115,22 @@ Common variants of Gradient Descent:
 - **Adagrad** – adaptive learning rate based on past gradients.
 - **RMSProp** – scales learning rates using moving averages.
 - **Adam** – combines Momentum and RMSProp, widely used in deep learning.
+
+### Regularization
+Regularization refers to a set of techniques used to prevent a machine learning model from overfitting the training data, improving its generalization to unseen data. It works by constraining or penalizing the model’s complexity, encouraging simpler solutions that are less sensitive to noise in the data. In our model, Simple CNN, we use *Dropout* and *Batch Normalization* methods.<br/>
+
+***Dropout*** is a regularization technique where, during training, a fixed percentage of neurons (e.g. 50%) are randomly set to zero in each forward pass, preventing co-adaptation of neurons. This prevents over-reliance on specific neurons and encourages redundancy and robustness. <br/> At inference time, all neurons are active, and their outputs are scaled to match the expected value during training. <br/>
+
+***Batch Normalization*** aims to stabilize and accelerate training by ensuring each channel’s activations have consistent statistics across mini‑batches. This method normalizes each feature channel’s activations to zero mean and unit variance over a mini-batch thereby It reduces internal covariate shift and can have a slight regularizing effect (due to batch noise). <br/> 
+For a layer’s inputs $`x`$, we compute per‑channel mean, $`μ`$, and variance, $`σ^2`$, then transform: <br/>
+```math
+\hat{x} = \frac{(x - μ)}{\sqrt{σ^{2} + ε}}
+```
+Then we scale ($`γ`$) and shift ($`β`$):
+```math
+⇨  y = γ·\hat{x} + β
+```
+where $`γ`$ and $`β`$ are learned scale and shift parameters. This stabilizes and speeds up training and adds a bit of regularization through batch noise.
 
 
 ## The Database
