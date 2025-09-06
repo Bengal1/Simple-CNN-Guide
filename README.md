@@ -108,6 +108,7 @@ In machine learning, optimization refers to the process of adjusting a model’s
 
 Gradient descent is a first-order iterative optimization algorithm that uses the gradient of the loss function to guide parameter updates. Starting from an initial set of parameters, the algorithm computes the gradient of the loss with respect to each parameter and then moves the parameters in the opposite direction of the gradient, since this is the direction of steepest descent. The magnitude of each update is controlled by the learning rate (η), which determines how large a step is taken toward reducing the loss. Through repeated updates, the parameters gradually converge toward a local (or sometimes global) minimum of the loss function.
 
+The parameter update rule for the $i-th$ parameter at iteration $t + 1$ is:
 
 ```math
 w^{(t+1)}_i = w^{(t)}_i - \eta·\nabla{L(w^{(t)}_i)}
