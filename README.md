@@ -144,14 +144,16 @@ where $`γ`$ and $`β`$ are learned scale and shift parameters. This stabilizes 
 
 
 ## The Dataset
-MNIST is a classic dataset of handwritten digits that’s become the “hello world” of computer vision and machine learning. By providing a simple, standardized set of images paired with labels, it lets newcomers and experts alike quickly prototype and benchmark classification algorithms, explore feature learning, and compare new techniques against a familiar baseline.
+A dataset is a collection of data used to train, validate, and test machine learning models. It provides the examples from which the model learns patterns, relationships, or features relevant to a specific task, such as classification or regression. The quality, size, and diversity of the dataset directly influence the model’s performance and generalization ability, making dataset preparation and selection a critical step in any machine learning pipeline.
+
 ### *MNIST Dataset*
-This network is trained on MNIST Dataset, a simple gray-scale images of a writen one-digit numbers (0-9), such that the network gets an image and it's target to classify it as the correct number (class).
+MNIST is a classic dataset of handwritten digits and is often referred to as the “hello world” of computer vision and machine learning. By providing a simple, standardized set of images paired with labels, it allows both newcomers and experts to quickly prototype and benchmark classification algorithms, explore feature learning, and compare new techniques against a familiar baseline.
+
+This network is trained on the MNIST dataset, which consists of grayscale images of handwritten single-digit numbers (0–9). The task for the network is to classify each input image into the correct digit class. The dataset contains 70,000 images, with 60,000 images used for training and 10,000 images for testing.
 
 <img src="https://user-images.githubusercontent.com/34989887/204675687-03f39aeb-1039-4abc-aec5-7f1d6cbbe52e.png" width="350" height="350"/>
 
-The MNIST Dataset has 70,000 images, such that the training dataset is 60,000 images and the test dataset is 10,000 images.
-For more imformation on [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database)
+For more information on the [MNIST Dataset](https://en.wikipedia.org/wiki/MNIST_database).
 
 ## The *Simple CNN* Model
 Our Model is consist of 6 layers:
