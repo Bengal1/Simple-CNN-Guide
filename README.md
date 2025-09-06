@@ -99,21 +99,33 @@ Then we scale ($`γ`$) and shift ($`β`$):
 ```
 where $`γ`$ and $`β`$ are learned scale and shift parameters. This stabilizes and speeds up training and adds a bit of regularization through batch noise.
 
---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
-### Optimization
+## Optimization
 <img align="right" height="200" alt="optimization" src="https://github.com/user-attachments/assets/dcd5cca0-916a-4ac6-b26b-c488229cc06b" />
 
+Mathematical optimization is the process of selecting the best element from a set of feasible options according to a given objective. An optimization problem is therefore the task of finding the solution that yields the minimum or maximum value of an objective function. Such problems can involve either continuous variables or discrete variables, depending on the context.
+
+In machine learning, optimization refers to the process of adjusting a model’s parameters so that its predictions better match the target outputs. This is typically framed as minimizing a loss function, which quantifies the error between predicted and true values. Because modern models have millions of parameters and highly non-linear loss surfaces, analytical solutions are infeasible. Instead, iterative algorithms like *Gradient Descent* and its variants are used to gradually update parameters in the direction that reduces the loss.
+
+Gradient descent is a first-order iterative optimization algorithm that uses the gradient of the loss function to guide parameter updates. Starting from an initial set of parameters, the algorithm computes the gradient of the loss with respect to each parameter and then moves the parameters in the opposite direction of the gradient, since this is the direction of steepest descent. The magnitude of each update is controlled by the learning rate (η), which determines how large a step is taken toward reducing the loss. Through repeated updates, the parameters gradually converge toward a local (or sometimes global) minimum of the loss function.
+
+
+```math
+w^{(t+1)}_i = w^{(t)}_i - \eta·\nabla{L(w^{(t)}_i)}
+
+```
+Where 
+* $`\eta`$ is the learning rate.
+* $L$ is the Loss function.
+* $`\nabla L`$ is gradient of the loss with respect to parameter $w_i$ 
+
+The minimum conditions for applying gradient-based optimization are that the loss function must be differentiable with respect to the model’s parameters and that gradients can be computed efficiently. Differentiability allows the use of the chain rule, implemented through backpropagation, to propagate errors from the output layer back through the network. This ensures that each parameter receives an update signal that guides it toward reducing the loss.
 
 Mathematical optimization is the selection of a best element, with regard to some criterion, from some set of available alternatives. Optimization problem is the problem of finding the best solution from all feasible solutions. Optimization problems can be divided into two categories, with continuous variables or discrete. In our case to solve the optimization problem we use *Gradient Descent algorithm* (or its variant), in order to to find the best parameters (in every layer) that minimizes the loss. In order for us to perform the algorithm, the *Loss function* needs to be [*Differentiable*](https://en.wikipedia.org/wiki/Differentiable_function), with a differentiable loss function we calculate the [*Gradient*](https://en.wikipedia.org/wiki/Gradient) in order to find the minimum point "direction", and then we take a step towards that minimum point. *Gradient Descent* is first-oder iterative algorithm. With an arbitrary starting point we will calculate the the the gradient and correct the parameters, duruing *Backpropagation* (Backward-pass), so that the corrected parameters will bring us to a lower value of loss up to convergence to the minimum point (local) of the loss function. The step size is adjust by the *Learning Rate*. Under certain conditions that are met with the selection of a known and common loss function, convergence of the algorithm to at least a local minimum point is guaranteed. 
 
 Let us note the loss (error) as $`L`$ and the learning rate as $`\eta`$, and using the [*Chain rule*](https://en.wikipedia.org/wiki/Chain_rule), we will calculate the derivative of the loss w.r.t the parameter and update the patameter. <br/>
 Below you can see an update step of the algorithm of the $`i-th`$ paramter on iteration $`t+1`$: 
 
-```math
-w^{(t+1)}_i = w^{(t)}_i - \eta·\nabla{L(w^{(t)}_i)}
 
-```
-Where $`\eta`$ is the learning rate.
 
 
 Common examples of gradient descent variants:
