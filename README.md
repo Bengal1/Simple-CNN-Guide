@@ -122,7 +122,7 @@ Regularization refers to a set of techniques used to prevent a machine learning 
 In our model, Simple CNN, we use *Dropout* and *Batch Normalization* methods.
 
 ***Dropout*** is a regularization technique where, during training, a fixed percentage of neurons (e.g. 50%) are randomly set to zero in each forward pass, preventing co-adaptation of neurons. This prevents over-reliance on specific neurons and encourages redundancy and robustness. <br/> At inference time, all neurons are active, and their outputs are scaled to match the expected value during training. <br/>
- $`LReLU(x) = \begin{cases}0.01x \; & if & x \le 0 \\\ x \; & if & x > 0\end{cases}`$
+
 $$
 h_i = \begin{cases}0 \; & with & probability & p  \\\ \frac{h_i}{1-p} \; & with & probability & 1-p\end{cases}
 $$
