@@ -294,7 +294,7 @@ Its adaptive nature makes Adam particularly effective for large-scale problems a
    
 3. Bias correction: 
    <div align="center">
-   $$\hat{m}_t = \frac{m_t}{1 - \beta_1^t}, \quad \hat{v}_t = \frac{v_t}{1 - \beta_2^t}$$
+   $$\hat{m}_t = \frac{m_t}{1 - \beta_1^t} \quad;\quad \hat{v}_t = \frac{v_t}{1 - \beta_2^t}$$
    </div>
    
 4. Parameter update: 
