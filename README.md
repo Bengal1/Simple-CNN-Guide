@@ -17,13 +17,11 @@ The network in this guide is a 6 layers network contains: 2 convolution layers, 
 In *Convolutional Neural Network* there are several types of layers, we will discuss the types that are relevant to our SimpleCNN model.
 #### Fully-Connected Layer
 <img align="right" height="300" alt="fc_cnn" src="https://github.com/user-attachments/assets/6c781d04-a4da-4fb7-b854-7b5183e22040" />
-The Fully Connected (FC) layer consists of the weights and biases. Every member of the output layer is connected through the weights to every member of the input layer.
+The Fully Connected (FC) layer consists of weights and biases, where every neuron in the output layer is connected to every neuron in the input layer through these weights.
 
-(In the image you can see the input layer in blue, the output layer in red and the arcs that connects them are the weights)
+(In the image, the input layer is shown in blue, the output layer in red, and the connecting arcs represent the weights.)
 
-In this manner, every member of the output layer is affected by every member of the input layer according to the corresponding weight.
-On top of the linear operation, an activation function will be applied, a non-linear function. In this layer we would like to optimize the weights and the biases.
-The formula below shows how to calculate the j-th output:
+In this structure, each output neuron is influenced by all input neurons according to the corresponding weights. After this linear combination, a non-linear activation function is applied. The goal in this layer is to optimize both the weights and the biases. The formula below shows how to compute the $j-th$ output:
 
 ```math 
 y_{j} = h \bigg( \sum_{i=1}^n w_{ji} x_i + w_{j0} \bigg) 
