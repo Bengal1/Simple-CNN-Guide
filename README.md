@@ -100,7 +100,7 @@ Then we scale ($`γ`$) and shift ($`β`$):
 where $`γ`$ and $`β`$ are learned scale and shift parameters. This stabilizes and speeds up training and adds a bit of regularization through batch noise.
 
 ## Optimization
-<img align="right" height="200" alt="optimization" src="https://github.com/user-attachments/assets/dcd5cca0-916a-4ac6-b26b-c488229cc06b" />
+<img align="right" height="240" alt="optimization" src="https://github.com/user-attachments/assets/dcd5cca0-916a-4ac6-b26b-c488229cc06b" />
 
 Mathematical optimization is the process of selecting the best element from a set of feasible options according to a given objective. An optimization problem is therefore the task of finding the solution that yields the minimum or maximum value of an objective function. Such problems can involve either continuous variables or discrete variables, depending on the context.
 
