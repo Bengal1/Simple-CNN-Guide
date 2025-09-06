@@ -117,8 +117,9 @@ Common variants of Gradient Descent:
 - **Adam** – combines Momentum and RMSProp, widely used in deep learning.
 
 ### Regularization
-Regularization refers to a set of techniques used to prevent a machine learning model from overfitting the training data, improving its generalization to unseen data. It works by constraining or penalizing the model’s complexity, encouraging simpler solutions that are less sensitive to noise in the data.<br/>
-In our model, Simple CNN, we use *Dropout* and *Batch Normalization* methods.<br/>
+Regularization refers to a set of techniques used to prevent a machine learning model from overfitting the training data, improving its generalization to unseen data. It works by constraining or penalizing the model’s complexity, encouraging simpler solutions that are less sensitive to noise in the data.
+
+In our model, Simple CNN, we use *Dropout* and *Batch Normalization* methods.
 
 ***Dropout*** is a regularization technique where, during training, a fixed percentage of neurons (e.g. 50%) are randomly set to zero in each forward pass, preventing co-adaptation of neurons. This prevents over-reliance on specific neurons and encourages redundancy and robustness. <br/> At inference time, all neurons are active, and their outputs are scaled to match the expected value during training. <br/>
 
