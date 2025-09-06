@@ -124,7 +124,7 @@ In our model, Simple CNN, we use *Dropout* and *Batch Normalization* methods.
 ***Dropout*** is a regularization technique where, during training, a fixed percentage of neurons (e.g. 50%) are randomly set to zero in each forward pass, preventing co-adaptation of neurons. This prevents over-reliance on specific neurons and encourages redundancy and robustness. <br/> At inference time, all neurons are active, and their outputs are scaled to match the expected value during training. <br/>
 
 $$
-h_i = \begin{cases}0 & \; & with & probability & p  \\\ \frac{h_i}{1-p} & \; & with & probability & 1-p\end{cases}
+\tilde{h_i} = \begin{cases}0 & \; & with & probability & p  \\\ \frac{h_i}{1-p} & \; & with & probability & 1-p\end{cases}
 $$
 
 ***Batch Normalization*** aims to stabilize and accelerate training by ensuring each channel’s activations have consistent statistics across mini‑batches. This method normalizes each feature channel’s activations to zero mean and unit variance over a mini-batch thereby It reduces internal covariate shift and can have a slight regularizing effect (due to batch noise). <br/> 
