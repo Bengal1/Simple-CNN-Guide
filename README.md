@@ -106,7 +106,7 @@ Mathematical optimization is the process of selecting the best element from a se
 
 In machine learning, optimization refers to the process of adjusting a model’s parameters so that its predictions better match the target outputs. This is typically framed as minimizing a loss function, which quantifies the error between predicted and true values. Because modern models have millions of parameters and highly non-linear loss surfaces, analytical solutions are infeasible. Instead, iterative algorithms like *Gradient Descent* and its variants are used to gradually update parameters in the direction that reduces the loss.
 
-Gradient descent is a first-order iterative optimization algorithm that uses the gradient of the loss function to guide parameter updates. Starting from an initial set of parameters, the algorithm computes the gradient of the loss with respect to each parameter and then moves the parameters in the opposite direction of the gradient, since this is the direction of steepest descent. The magnitude of each update is controlled by the learning rate (η), which determines how large a step is taken toward reducing the loss. Through repeated updates, the parameters gradually converge toward a local (or sometimes global) minimum of the loss function.
+Gradient descent is a first-order iterative optimization algorithm that uses the [*Gradient*](https://en.wikipedia.org/wiki/Gradient) of the loss function to guide parameter updates. Starting from an initial set of parameters, the algorithm computes the gradient of the loss with respect to each parameter and then moves the parameters in the opposite direction of the gradient, since this is the direction of steepest descent. The magnitude of each update is controlled by the learning rate (η), which determines how large a step is taken toward reducing the loss. Through repeated updates, the parameters gradually converge toward a local (or sometimes global) minimum of the loss function.
 
 The parameter update rule for the $i-th$ parameter at iteration $t + 1$ is:
 
@@ -119,7 +119,7 @@ Where
 * $L$ is the Loss function.
 * $`\nabla L`$ is gradient of the loss with respect to parameter $w_i$ 
 
-The minimum conditions for applying gradient-based optimization are that the loss function must be differentiable with respect to the model’s parameters and that gradients can be computed efficiently. Differentiability allows the use of the chain rule, implemented through backpropagation, to propagate errors from the output layer back through the network. This ensures that each parameter receives an update signal that guides it toward reducing the loss.
+The minimum conditions for applying gradient-based optimization are that the loss function must be [*Differentiable*](https://en.wikipedia.org/wiki/Differentiable_function) with respect to the model’s parameters and that gradients can be computed efficiently. Differentiability allows the use of the [*Chain rule*](https://en.wikipedia.org/wiki/Chain_rule), implemented through backpropagation, to propagate errors from the output layer back through the network. This ensures that each parameter receives an update signal that guides it toward reducing the loss.
 
 Common variants of Gradient Descent:
 - **Batch Gradient Descent** – uses the whole dataset per step.
@@ -130,22 +130,6 @@ Common variants of Gradient Descent:
 - **RMSProp** – scales learning rates using moving averages.
 - **Adam** – combines Momentum and RMSProp, widely used in deep learning.
 
-
-Mathematical optimization is the selection of a best element, with regard to some criterion, from some set of available alternatives. Optimization problem is the problem of finding the best solution from all feasible solutions. Optimization problems can be divided into two categories, with continuous variables or discrete. In our case to solve the optimization problem we use *Gradient Descent algorithm* (or its variant), in order to to find the best parameters (in every layer) that minimizes the loss. In order for us to perform the algorithm, the *Loss function* needs to be [*Differentiable*](https://en.wikipedia.org/wiki/Differentiable_function), with a differentiable loss function we calculate the [*Gradient*](https://en.wikipedia.org/wiki/Gradient) in order to find the minimum point "direction", and then we take a step towards that minimum point. *Gradient Descent* is first-oder iterative algorithm. With an arbitrary starting point we will calculate the the the gradient and correct the parameters, duruing *Backpropagation* (Backward-pass), so that the corrected parameters will bring us to a lower value of loss up to convergence to the minimum point (local) of the loss function. The step size is adjust by the *Learning Rate*. Under certain conditions that are met with the selection of a known and common loss function, convergence of the algorithm to at least a local minimum point is guaranteed. 
-
-Let us note the loss (error) as $`L`$ and the learning rate as $`\eta`$, and using the [*Chain rule*](https://en.wikipedia.org/wiki/Chain_rule), we will calculate the derivative of the loss w.r.t the parameter and update the patameter. <br/>
-Below you can see an update step of the algorithm of the $`i-th`$ paramter on iteration $`t+1`$: 
-
-
-
-
-Common examples of gradient descent variants:
-* Batch gradient descent.
-* Stochastic gradient descent (SGD).
-* Grdient Descent with *Momentum*.
-* Adaptive Gradient (Adagrad).
-* Root Mean Squared Propagation (RMSProp).
-* Adaptive Moment Estimation (Adam).
 
 ## The Database
 MNIST is a classic dataset of handwritten digits that’s become the “hello world” of computer vision and machine learning. By providing a simple, standardized set of images paired with labels, it lets newcomers and experts alike quickly prototype and benchmark classification algorithms, explore feature learning, and compare new techniques against a familiar baseline.
