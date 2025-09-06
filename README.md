@@ -258,9 +258,48 @@ plot_training_losses(train_losses, validation_losses)
 ```
 
 ### *Loss & Optimization*
-* [**Cross Enthropy Loss**](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) - This criterion computes the cross entropy loss between input logits and target. Loss function is a function that maps an event or values of one or more variables onto a real number intuitively representing some "loss" associated with the event. The Cross Enthropy Loss function is commonly used in classification tasks both in traditional ML and deep learning, and it also has its advantages. For more information on [Loss function](https://en.wikipedia.org/wiki/Loss_function) and [Cross Enthropy Loss function](https://wandb.ai/sauravmaheshkar/cross-entropy/reports/What-Is-Cross-Entropy-Loss-A-Tutorial-With-Code--VmlldzoxMDA5NTMx). 
+#### Cross Enthropy Loss Function
+[**Cross Enthropy Loss**](https://pytorch.org/docs/stable/generated/torch.nn.CrossEntropyLoss.html) is widely used for classification tasks, as it measures the difference between the predicted probability distribution and the true distribution. Given a predicted probability vector **$p$** and a one-hot encoded target vector **$y$**, the loss for a single example is defined as:
 
-* [**Adam optimizer**](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) - The Adam optimization algorithm is an extension to stochastic gradient descent (SGD). Unlike SGD, The method computes individual adaptive learning rates for different parameters from estimates of first and second moments of the gradients. For more information on [Stochastic gradient descent, extensions and variants](https://en.wikipedia.org/wiki/Stochastic_gradient_descent).
+$$
+\mathcal{L}_{CE} = - \sum_{i} y_i \log \hat{y}_i
+$$
+
+This loss penalizes confident incorrect predictions more heavily than less certain ones, encouraging the model to assign higher probabilities to the correct classes. Minimizing cross-entropy effectively maximizes the likelihood of the correct labels under the model’s predicted distribution.
+
+#### Adam Optimizer
+[**Adam (Adaptive Moment Estimation)**](https://pytorch.org/docs/stable/generated/torch.optim.Adam.html) is a widely used optimization algorithm in machine learning. It combines the benefits of Momentum and RMSProp, maintaining running estimates of both the mean and the uncentered variance of gradients to adaptively adjust the learning rate for each parameter.
+By using these adaptive estimates, Adam can converge faster and more reliably on complex models, handle noisy gradients, and often requires less manual tuning of the learning rate compared to standard stochastic gradient descent.
+Its adaptive nature makes Adam particularly effective for large-scale problems and deep neural networks, where gradients can vary significantly across parameters.
+
+##### Adam Algorithm:
+- $\theta_t$ : parameters at time step t.  
+- $\beta_1, \beta_2$ : exponential decay rates for moment estimates.  
+- $\alpha$ : learning rate.
+- $\epsilon$ : small constant to prevent division by zero.  
+- $\lambda$ : weight decay coefficient. <br/>
+
+
+1. Compute gradients:
+   <div align="center">
+   $$g_t = \nabla_\theta J(\theta_t)$$
+   </div>
+
+2. Update moment estimates:
+   <div align="center">
+   $$m_t = \beta_1 m_{t-1} + (1 - \beta_1) g_t$$  
+   $$v_t = \beta_2 v_{t-1} + (1 - \beta_2) g_t^2$$
+   </div>
+   
+3. Bias correction: 
+   <div align="center">
+   $$\hat{m}_t = \frac{m_t}{1 - \beta_1^t}, \quad \hat{v}_t = \frac{v_t}{1 - \beta_2^t}$$
+   </div>
+   
+4. Parameter update: 
+   <div align="center">
+   $$\theta_{t+1} = \theta_t - \alpha \cdot \frac{\hat{m}_t}{\sqrt{\hat{v}_t} + \epsilon}$$
+   </div>
 
 ## Evaluation
 The model performances are evaluated mainly by the *Loss*. Loss is the key measure of how far predictions deviate from the targets, driving the optimization process to adjust model parameters and minimize this error. Training loss reflects performance on the data used for learning, while validation loss measures performance on unseen data to assess generalization; a widening gap between them often indicates overfitting.
